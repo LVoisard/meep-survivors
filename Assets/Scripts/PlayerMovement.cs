@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Squish Squish;
     private Vector2 MoveInput;
 
-    private Vector2 smushLocation;
+    private Vector3 PreviousVelocity;
     private bool isEnabled = true;
 
     void Start()
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-
+            Rigidbody.linearVelocity = Vector3.zero;
         }
     }
 
@@ -46,11 +46,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (state == Squish.SquishState.Neutral)
         {
-            isEnabled = true;
-        }
-        else if (state == Squish.SquishState.Smush)
-        {
+            PreviousVelocity = Rigidbody.linearVelocity;
             isEnabled = false;
+        }
+        else if (state == Squish.SquishState.Immobile)
+        {
+            isEnabled = true;
         }
     }
 }
