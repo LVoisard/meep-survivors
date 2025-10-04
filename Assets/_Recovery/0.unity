@@ -569,14 +569,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8846523149624549280, guid: d3eac6f26bde1158fa67498bb2e0cff3, type: 3}
-      propertyPath: DirectionalRotationSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846523149624549280, guid: d3eac6f26bde1158fa67498bb2e0cff3, type: 3}
-      propertyPath: DirectionalRotationDegrees
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9170151976877671836, guid: d3eac6f26bde1158fa67498bb2e0cff3, type: 3}
       propertyPath: m_Name
       value: Meep

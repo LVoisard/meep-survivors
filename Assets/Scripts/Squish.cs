@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Sprite))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,7 +7,8 @@ public class Squish : MonoBehaviour
 {
     private Rigidbody2D Rigidbody;
     private SquishState State;
-    private PlayerMovement Movement;
+
+    public UnityEvent<SquishState> onSquishStateChanged;
 
     [SerializeField] float StretchAmount = 1f;
     [SerializeField] float SmushAmount = 1f;
@@ -21,8 +23,10 @@ public class Squish : MonoBehaviour
     bool isAnimationPlaying = false;
     float timeInAnimation = 0f;
 
-    enum SquishState
-    { 
+    private Quaternion initialRot;
+
+    public enum SquishState
+    {
         Immobile,
         Neutral,
         Squish,
@@ -32,13 +36,13 @@ public class Squish : MonoBehaviour
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
-        Movement = GetComponentInParent<PlayerMovement>();
+        initialRot = transform.rotation;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -54,16 +58,16 @@ public class Squish : MonoBehaviour
             if (!isAnimationPlaying)
             {
                 isAnimationPlaying = true;
-                State = SquishState.Squish;
+                SetState(SquishState.Squish);
             }
 
             float targetZ = Mathf.Sign(velocity.x) * Mathf.Sin(timeInAnimation) * DirectionalRotationDegrees;
-            Quaternion targetRot = Quaternion.Euler(0, 0, targetZ);
+            Quaternion targetRot = Quaternion.Euler(initialRot.x, 0, targetZ);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, DirectionalRotationSpeed * Time.deltaTime);
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, DirectionalRotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, DirectionalRotationSpeed * Time.deltaTime);
         }
 
         if (isAnimationPlaying)
@@ -80,22 +84,19 @@ public class Squish : MonoBehaviour
                     break;
                 case SquishState.Neutral:
                     if (timeInAnimation > StretchTime + SmushTime + NeutralTime)
-                        State = SquishState.Immobile;
-
-                    Movement.IsEnabled = true;
+                        SetState(SquishState.Immobile);
                     break;
                 case SquishState.Squish:
                     if (timeInAnimation > StretchTime)
-                        State = SquishState.Smush;
+                        SetState(SquishState.Smush);
 
                     z = Mathf.Lerp(transform.position.z, VerticalJumpHeight, VerticalJumpSpeed * Time.deltaTime);
                     break;
                 case SquishState.Smush:
                     if (timeInAnimation > StretchTime + SmushTime)
-                        State = SquishState.Neutral;
+                        SetState(SquishState.Neutral);
 
                     z = Mathf.Lerp(transform.position.z, 0f, VerticalJumpSpeed * Time.deltaTime);
-                    Movement.IsEnabled = false;
                     break;
             }
 
@@ -122,5 +123,11 @@ public class Squish : MonoBehaviour
         }
 
         transform.localScale = new Vector3(scaleX, scaleY, 1);
+    }
+
+    private void SetState(SquishState state)
+    {
+        this.State = state;
+        onSquishStateChanged?.Invoke(state);
     }
 }

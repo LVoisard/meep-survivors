@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ee08ba9928c8c428dc7ea322106f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Squish
+  onSquishStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   StretchAmount: 0.2
   SmushAmount: 0.4
   StretchTime: 0.4
@@ -139,6 +142,7 @@ MonoBehaviour:
   VerticalJumpHeight: -2
   VerticalJumpSpeed: 0.02
   DirectionalRotationDegrees: 15
+  DirectionalRotationSpeed: 8
 --- !u!1 &9170151976877671836
 GameObject:
   m_ObjectHideFlags: 0
