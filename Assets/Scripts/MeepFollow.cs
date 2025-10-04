@@ -4,8 +4,9 @@ using UnityEngine;
 public class MeepFollow : MonoBehaviour
 {
     [Header("Follow Settings")]
-    public float followSpeed = 10f;   // How fast it moves
-    public float followDistance = 0.5f; // Desired spacing between segments
+    public float followSpeed = 10f;
+    public float followDistance = 0.5f;
+    public float timeBetweenHops = 0.4f;
 
     private Transform target;
     private Rigidbody2D rb;
@@ -32,8 +33,8 @@ public class MeepFollow : MonoBehaviour
             Vector2 newPosition = Vector2.Lerp(rb.position, targetPosition, Time.fixedDeltaTime * followSpeed);
             rb.MovePosition(newPosition);
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, Time.fixedDeltaTime * followSpeed));
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //rb.MoveRotation(Mathf.LerpAngle(rb.rotation, angle, Time.fixedDeltaTime * followSpeed));
         }
     }
 
@@ -41,7 +42,7 @@ public class MeepFollow : MonoBehaviour
     {
         if (state == Squish.SquishState.Squish)
         {
-            Invoke("RequestBounce", transform.GetSiblingIndex() * 0.2f);
+            Invoke("RequestBounce", transform.GetSiblingIndex() * timeBetweenHops);
         }
     }
 

@@ -106,13 +106,14 @@ MonoBehaviour:
   onSquishStateChanged:
     m_PersistentCalls:
       m_Calls: []
+  PlayerBounce: 0
   StretchAmount: 0.2
   SmushAmount: 0.4
   StretchTime: 0.4
   SmushTime: 0.2
   NeutralTime: 0.2
   VerticalJumpHeight: -2
-  VerticalJumpSpeed: 0.02
+  VerticalJumpSpeed: 4
   DirectionalRotationDegrees: 15
   DirectionalRotationSpeed: 8
 --- !u!1 &9170151976877671836
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeepFollow
   followSpeed: 4
   followDistance: 0.8
+  timeBetweenHops: 0.2
 --- !u!50 &3831762607925521191
 Rigidbody2D:
   serializedVersion: 5

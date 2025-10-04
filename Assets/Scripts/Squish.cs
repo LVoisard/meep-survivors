@@ -122,11 +122,11 @@ public class Squish : MonoBehaviour
         switch (State)
         {
             case SquishState.Squish:
-                scaleY = 1f + velocity.magnitude * StretchAmount / 10;
+                scaleY = 1f +  StretchAmount / 10;
                 scaleX = 1f / scaleY;
                 break;
             case SquishState.Smush:
-                scaleX = 1f + velocity.magnitude * SmushAmount / 10;
+                scaleX = 1f + SmushAmount / 10;
                 scaleY = 1f / scaleX;
                 break;
             case SquishState.Immobile:
