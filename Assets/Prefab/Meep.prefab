@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298476163726276978}
   - component: {fileID: 1298086535597177907}
-  - component: {fileID: 4489023401546989741}
   - component: {fileID: 8846523149624549280}
   m_Layer: 0
   m_Name: Sprite
@@ -92,33 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4489023401546989741
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921508807307616320}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &8846523149624549280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +125,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2104513466110186663}
   - component: {fileID: 7437202917090692753}
+  - component: {fileID: 8943560715151558768}
+  - component: {fileID: 3831762607925521191}
   m_Layer: 0
   m_Name: Meep
   m_TagString: Untagged
@@ -188,3 +162,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c92de0a8a59854ab80ce3d1e7d98d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseMeep
+--- !u!114 &8943560715151558768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8517770ee94561649aab32b972b29907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeepFollow
+  followSpeed: 4
+  followDistance: 0.8
+--- !u!50 &3831762607925521191
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

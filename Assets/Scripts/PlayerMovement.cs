@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -13,22 +13,10 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 smushLocation;
     private bool isEnabled = true;
-    public bool IsEnabled
-    {
-        get => isEnabled;
-        set
-        {
-            if (isEnabled == value) return;
-            isEnabled = value;
-
-            // Call function when value changes
-            OnIsEnabledChanged(isEnabled);
-        }
-    }
 
     void Start()
     {
-        Rigidbody = GetComponentInChildren<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
         Squish = GetComponentInChildren<Squish>();
         Squish.onSquishStateChanged.AddListener(Test);
     }
@@ -44,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (IsEnabled)
+        if (isEnabled)
         {
             Rigidbody.linearVelocity = MoveInput * MoveSpeed;
         }
@@ -54,21 +42,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnIsEnabledChanged(bool val)
-    {
-        if (!val)
-            smushLocation = transform.position;
-    }
-
     void Test(Squish.SquishState state)
     {
         if (state == Squish.SquishState.Neutral)
         {
-            IsEnabled = true;
+            isEnabled = true;
         }
         else if (state == Squish.SquishState.Smush)
         {
-            IsEnabled = false;
+            isEnabled = false;
         }
     }
 }
