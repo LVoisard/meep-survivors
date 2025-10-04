@@ -242,11 +242,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Squish
   StretchAmount: 0.2
   SmushAmount: 0.4
-  StretchTime: 0.4
+  StretchTime: 0.6
   SmushTime: 0.2
   NeutralTime: 0.2
   VerticalJumpHeight: -2
-  VerticalJumpSpeed: 0.02
+  VerticalJumpSpeed: 2
+  DirectionalRotationDegrees: 15
+  DirectionalRotationSpeed: 8
 --- !u!50 &723117966
 Rigidbody2D:
   serializedVersion: 5

@@ -8,6 +8,20 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D Rigidbody;
     private Vector2 MoveInput;
 
+    private Vector2 smushLocation;
+    private bool isEnabled = true;
+    public bool IsEnabled {
+        get => isEnabled;
+        set 
+        {
+            if (isEnabled == value) return;
+            isEnabled = value;
+
+            // Call function when value changes
+            OnIsEnabledChanged(isEnabled);
+        } 
+    }
+
     void Start()
     {
         Rigidbody = GetComponentInChildren<Rigidbody2D>();
@@ -22,6 +36,19 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Rigidbody.linearVelocity = MoveInput * MoveSpeed;
+        if (IsEnabled)
+        {
+            Rigidbody.linearVelocity = MoveInput * MoveSpeed;
+        }
+        else
+        { 
+            
+        }
+    }
+
+    void OnIsEnabledChanged(bool val)
+    {
+        if (!val)
+            smushLocation = transform.position;
     }
 }

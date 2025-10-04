@@ -6,6 +6,7 @@ public class Squish : MonoBehaviour
 {
     private Rigidbody2D Rigidbody;
     private SquishState State;
+    private PlayerMovement Movement;
 
     [SerializeField] float StretchAmount = 1f;
     [SerializeField] float SmushAmount = 1f;
@@ -15,6 +16,7 @@ public class Squish : MonoBehaviour
     [SerializeField] float VerticalJumpHeight = 1f;
     [SerializeField] float VerticalJumpSpeed = 0.3f;
     [SerializeField] float DirectionalRotationDegrees = 15;
+    [SerializeField] float DirectionalRotationSpeed = 3;
 
     bool isAnimationPlaying = false;
     float timeInAnimation = 0f;
@@ -30,6 +32,7 @@ public class Squish : MonoBehaviour
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
+        Movement = GetComponentInParent<PlayerMovement>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,9 +57,13 @@ public class Squish : MonoBehaviour
                 State = SquishState.Squish;
             }
 
-
-            float rotation = Mathf.Lerp(transform.rotation.eulerAngles.z, Quaternion.FromToRotation(Vector3.right, velocity).eulerAngles.z, 0.01f);
-            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, rotation);
+            float targetZ = Mathf.Sign(velocity.x) * Mathf.Sin(timeInAnimation) * DirectionalRotationDegrees;
+            Quaternion targetRot = Quaternion.Euler(0, 0, targetZ);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, DirectionalRotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, DirectionalRotationSpeed * Time.deltaTime);
         }
 
         if (isAnimationPlaying)
@@ -72,20 +79,23 @@ public class Squish : MonoBehaviour
                     z = 0f;
                     break;
                 case SquishState.Neutral:
-                    if (timeInAnimation > StretchTime + SmushTime)
+                    if (timeInAnimation > StretchTime + SmushTime + NeutralTime)
                         State = SquishState.Immobile;
+
+                    Movement.IsEnabled = true;
                     break;
                 case SquishState.Squish:
                     if (timeInAnimation > StretchTime)
                         State = SquishState.Smush;
 
-                    z = Mathf.Lerp(transform.position.z, VerticalJumpHeight, VerticalJumpSpeed);
+                    z = Mathf.Lerp(transform.position.z, VerticalJumpHeight, VerticalJumpSpeed * Time.deltaTime);
                     break;
                 case SquishState.Smush:
                     if (timeInAnimation > StretchTime + SmushTime)
                         State = SquishState.Neutral;
 
-                    z = Mathf.Lerp(transform.position.z, 0f, VerticalJumpSpeed);
+                    z = Mathf.Lerp(transform.position.z, 0f, VerticalJumpSpeed * Time.deltaTime);
+                    Movement.IsEnabled = false;
                     break;
             }
 
