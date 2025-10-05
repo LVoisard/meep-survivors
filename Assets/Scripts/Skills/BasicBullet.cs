@@ -50,6 +50,25 @@ public class BasicBullet : MonoBehaviour
                 hp.TakeDamage(damage * (100f + effectors.Damage) / 100f);
             }
 
+            var explode = GetComponent<ExplodeOnContact>();
+            if (explode != null)
+            {
+                var pos = transform.position;
+                Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), explode.radius * (1f + effectors.AreaOfEffect / 100f));
+
+                foreach (var hit in hits)
+                {
+                    if (hit.tag == "Enemy")
+                    {
+                        var hp2 = hit.GetComponent<Health>();
+                        if (hp2 != null)
+                        {
+                            hp2.TakeDamage(damage * (100f + effectors.Damage) / 100f);
+                        }
+                    }
+                }
+            }
+
             if (pierce != null)
             {
                 if (pierce.CanPierce())
