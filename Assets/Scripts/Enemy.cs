@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     PlayerMovement playerEntity;
     Rigidbody2D rigidbody2D;
     [SerializeField] private float speed = 5;
+    public bool rooted = false;
 
 
 
@@ -19,8 +20,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Root(float duration)
+    {
+        rooted = true;
+        rigidbody2D.linearVelocity = Vector3.zero;
+
+        Helper.Wait(duration, () => rooted = false);
+    }
+
     private void FixedUpdate()
     {
-        rigidbody2D.linearVelocity = Vector2.Lerp(rigidbody2D.linearVelocity, (playerEntity.transform.position - transform.position).normalized * speed, Time.fixedDeltaTime);
+        if (!rooted)
+            rigidbody2D.linearVelocity = Vector2.Lerp(rigidbody2D.linearVelocity, (playerEntity.transform.position - transform.position).normalized * speed, Time.fixedDeltaTime);
     }
 }
