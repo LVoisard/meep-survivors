@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class SharkFinProjectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 20f;
     [SerializeField] private float lifetime = 5f;
     [SerializeField] private float radius = 2f;
     private float damage;
@@ -19,7 +19,7 @@ public class SharkFinProjectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        angle += speed * 100 * Time.fixedDeltaTime;
+        angle += speed * Time.fixedDeltaTime;
 
         float rad = angle * Mathf.Deg2Rad;
         Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius * (1f + effectors.AreaOfEffect / 100f);

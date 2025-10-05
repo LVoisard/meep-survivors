@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class SpeedEffector : MonoBehaviour
 {
-    public float value;
+    public float value = 0;
 }

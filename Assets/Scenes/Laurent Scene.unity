@@ -330,6 +330,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
   skill: {fileID: 11400000, guid: 521659b5b263ed218a1c97382ab909f7, type: 2}
+--- !u!114 &980644956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980644931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
+  skill: {fileID: 11400000, guid: 7c315203084a1434bbcb053c0b5aa4f5, type: 2}
 --- !u!1 &1059686824
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,8 +638,8 @@ MonoBehaviour:
   arenaSprite: {fileID: 1926643823}
   enemyPrefab: {fileID: 7272628508442995062, guid: 5a4887b212401f5a9bd95ee099b78732, type: 3}
   enemyContainer: {fileID: 1059686824}
-  spawnCooldown: 0.2
-  spawnAmount: 5
+  spawnCooldown: 1
+  spawnAmount: 4
 --- !u!1 &1682881684
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,32 +720,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
   m_PrefabInstance: {fileID: 1796558935}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1753648910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753648909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
-  skill: {fileID: 11400000, guid: ececc2dc02087d4a6b94908b8c0a796a, type: 2}
---- !u!114 &1753648911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753648909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
-  skill: {fileID: 11400000, guid: d918035da50fef55294090754fd1e4ca, type: 2}
 --- !u!114 &1753648912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,8 +732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
-  skill: {fileID: 11400000, guid: ff8f18f47d1882ddf8be9d4a0b78e177, type: 2}
---- !u!114 &1753648917
+  skill: {fileID: 11400000, guid: 7abad68ba107c56bf8ce93beb61b597e, type: 2}
+--- !u!114 &1753648919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -755,11 +742,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753648909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
-  skill: {fileID: 11400000, guid: 649eca8e79c4527ffb2a450b8e18bf6f, type: 2}
---- !u!114 &1753648918
+  m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
+  value: 0
+--- !u!114 &1753648920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -768,10 +755,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753648909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Script: {fileID: 11500000, guid: 39bccfeecee3dd899a6aa65889b2a04a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
-  skill: {fileID: 11400000, guid: 160a56b0060b2d623b87f2ff64a720d9, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedEffector
+  value: 0
+--- !u!114 &1753648921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753648909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e889902f18e5b608173a2d6fe52f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DurationEffector
+  value: 0
+--- !u!114 &1753648922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753648909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
+  value: 0
+--- !u!114 &1753648923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753648909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d0da7ca5a7671d0a9bf84c2a050f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CooldownEffector
+  value: 0
+--- !u!114 &1753648924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753648909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
+  value: 500
 --- !u!1001 &1796558935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -896,6 +935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8035866012808942916, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -905,16 +948,22 @@ PrefabInstance:
       addedObject: {fileID: 1753648912}
     - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1753648911}
+      addedObject: {fileID: 1753648924}
     - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1753648910}
+      addedObject: {fileID: 1753648923}
     - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1753648918}
+      addedObject: {fileID: 1753648922}
     - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1753648917}
+      addedObject: {fileID: 1753648921}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1753648920}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1753648919}
     - targetCorrespondingSourceObject: {fileID: 2427442551404490976, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 980644940}
@@ -924,6 +973,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2427442551404490976, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 980644941}
+    - targetCorrespondingSourceObject: {fileID: 2427442551404490976, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980644956}
     - targetCorrespondingSourceObject: {fileID: 2347047171801650803, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 275356802}

@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60af5112a68823b42965c564c8557d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SharkFinProjectile
-  speed: 5
+  speed: 150
   lifetime: 5
   radius: 2
 --- !u!1 &5740516621987978310

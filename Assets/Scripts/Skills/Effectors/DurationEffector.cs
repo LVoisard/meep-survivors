@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class DurationEffector : MonoBehaviour
 {
-    public float value;
+    public float value = 0;
 }

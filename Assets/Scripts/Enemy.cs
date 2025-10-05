@@ -9,11 +9,14 @@ public class Enemy : MonoBehaviour
     public bool rooted = false;
 
 
+    private void Awake()
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
         playerEntity = GameObject.FindFirstObjectByType<PlayerMovement>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
         if (playerEntity == null)
         {
             Debug.LogError("Could not find a player");
@@ -23,8 +26,7 @@ public class Enemy : MonoBehaviour
     public void Root(float duration)
     {
         rooted = true;
-        rigidbody2D.linearVelocity = Vector3.zero;
-
+        rigidbody2D.linearVelocity = Vector2.zero;
         Helper.Wait(duration, () => rooted = false);
     }
 

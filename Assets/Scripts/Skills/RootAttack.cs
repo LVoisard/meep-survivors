@@ -20,8 +20,9 @@ public class RootAttack : Skill
 
         foreach (var target in targets)
         {
+            // TODO ADD VISUAL
             target.GetComponent<Enemy>().Root(duration * (1f + effectors.Duration / 100f));
-            target.GetComponent<Health>().TakeDamage(damage * (100f + effectors.Damage) / 100f);
+            target.GetComponent<Health>().TakeDamage(damage * (1f + effectors.Damage / 100f));
         }
     }
 }

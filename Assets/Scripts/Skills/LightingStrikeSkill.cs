@@ -28,24 +28,10 @@ public class LightingStikeSkill : Skill
         var enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None)
             .Select(x => x.transform).ToList();
 
-        int[] indices = new int[this.targetCount + effectors.AdditionalTargets];
+        Transform[] targs = new Transform[this.targetCount + effectors.AdditionalTargets];
         for (int i = 0; i < this.targetCount + effectors.AdditionalTargets; i++)
         {
-            int trial = Random.Range(0, enemies.Count());
-            if (!indices.Contains(trial))
-            {
-                indices[i] = trial;
-            }
-            else
-            {
-                i--;
-            }
-        }
-
-        Transform[] targs = new Transform[this.targetCount + effectors.AdditionalTargets];
-        for (int i = 0; i < this.targetCount; i++)
-        {
-            targs[i] = enemies[indices[i]];
+            targs[i] = enemies[Random.Range(0, enemies.Count())];
         }
 
         return targs;
