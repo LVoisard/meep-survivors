@@ -31,7 +31,11 @@ public class Health : MonoBehaviour
             return true;
         }
 
-        Helper.Wait(0.05f, () => spriteRenderer.color = Color.white);
+        Helper.Wait(0.05f, () =>
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.color = Color.white;
+        });
 
         return false;
     }

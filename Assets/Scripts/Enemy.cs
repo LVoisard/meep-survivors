@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         if (!rooted)
+        {
             rigidbody2D.linearVelocity = Vector2.Lerp(rigidbody2D.linearVelocity, (playerEntity.transform.position - transform.position).normalized * speed, Time.fixedDeltaTime);
+        }
     }
 }

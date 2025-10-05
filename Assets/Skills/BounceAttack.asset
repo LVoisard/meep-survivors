@@ -15,5 +15,5 @@ MonoBehaviour:
   targetCount: 1
   ready: 0
   radius: 3
-  damage: 3
+  damage: 5
   particles: {fileID: 8139408232428682728, guid: bff1e9b47f72786e9b882ee7618b816e, type: 3}

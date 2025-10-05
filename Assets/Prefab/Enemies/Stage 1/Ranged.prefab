@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 810962367400762179}
   - component: {fileID: 7272628508442995062}
   - component: {fileID: 8892169557832131268}
+  - component: {fileID: 8352949769715986565}
   m_Layer: 0
   m_Name: Ranged
   m_TagString: Enemy
@@ -188,3 +189,18 @@ MonoBehaviour:
   onDied:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8352949769715986565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548626105913669717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e813a42fcd78d3c3b11f12036c4ae25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  shotPrefab: {fileID: -660805927475677602, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
+  damage: 1
+  cooldown: 3

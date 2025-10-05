@@ -1,3 +1,4 @@
+using System;
 using Mono.Cecil.Cil;
 using UnityEngine;
 
@@ -6,13 +7,15 @@ public class BasicBullet : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float lifetime = 5f;
     private float damage;
+    private string targetTag;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private Skill.SkillEffectors effectors;
-    public void SetStats(float dmg, Skill.SkillEffectors eff)
+    public void SetStats(string targetTag, float dmg, Skill.SkillEffectors eff)
     {
         damage = dmg;
         effectors = eff;
+        this.targetTag = targetTag;
     }
     void Start()
     {
@@ -28,7 +31,7 @@ public class BasicBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == targetTag)
         {
             var pierce = GetComponent<Pierce>();
             var chain = GetComponent<Chain>();
@@ -58,7 +61,7 @@ public class BasicBullet : MonoBehaviour
 
                 foreach (var hit in hits)
                 {
-                    if (hit.tag == "Enemy")
+                    if (hit.tag == targetTag)
                     {
                         var hp2 = hit.GetComponent<Health>();
                         if (hp2 != null)

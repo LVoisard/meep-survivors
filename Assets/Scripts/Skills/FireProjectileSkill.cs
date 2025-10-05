@@ -18,7 +18,7 @@ public class FireProjectileSkill : Skill
             BasicBullet projInst = Instantiate(projectile);
             projInst.transform.position = pos + dir;
             projInst.transform.forward = dir;
-            projInst.SetStats(dmg, effectors);
+            projInst.SetStats("Enemy", dmg, effectors);
         }
 
         ready = false;
