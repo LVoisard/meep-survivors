@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39327fdcd046860dab91047982d77487, type: 3}
+  m_Name: BounceLinger
+  m_EditorClassIdentifier: Assembly-CSharp::BounceLinger
+  targetCount: 1
+  ready: 0
+  damageOverTime: 5
+  duration: 3
+  groundEffectPrefab: {fileID: 8567338997955759205, guid: e50fdf2e94e002cad92eeb29007e63d7, type: 3}

@@ -18,8 +18,8 @@ public class BaseMeep : MonoBehaviour
 
     public enum MeepType
     {
-        Melee,
-        Ranged,
-        Sorcerer
+        Red,
+        Blue,
+        Green
     }
 }

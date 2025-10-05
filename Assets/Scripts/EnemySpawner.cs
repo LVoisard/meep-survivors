@@ -45,10 +45,10 @@ public class EnemySpawner : MonoBehaviour
             Enemy go = Instantiate(enemyPrefab, new Vector3(xPos, yPos, 0), enemyPrefab.transform.rotation, enemyContainer.transform);
         }
 
-        StartCoroutine(Helper.StartCooldown(spawnCooldown, () =>
+        Helper.Wait(spawnCooldown, () =>
         {
             spawnCooldownReady = true;
-        }));
+        });
     }
 
 }

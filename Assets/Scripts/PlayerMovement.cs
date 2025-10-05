@@ -26,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         MoveInput = new Vector2(moveX, moveY).normalized;
-        Debug.Log($"{moveX}, {moveY}");
-        Debug.Log(Input.GetKeyDown(KeyCode.A));
     }
 
     void FixedUpdate()
