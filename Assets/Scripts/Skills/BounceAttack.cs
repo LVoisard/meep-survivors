@@ -38,6 +38,7 @@ public class BounceAttack : Skill
 
     private void DealDamageInRadius()
     {
+        if (owner == null) return;
         var pos = owner.transform.position;
         Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), radius * (1f + effectors.AreaOfEffect / 100f));
 
