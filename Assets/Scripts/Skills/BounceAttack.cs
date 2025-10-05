@@ -10,6 +10,7 @@ public class BounceAttack : Skill
 
     [SerializeField] private GameObject particles;
 
+    string targetTag = "Enemy";
     ParticleSystem partSys;
     public override void SetOwner(GameObject go)
     {
@@ -17,6 +18,8 @@ public class BounceAttack : Skill
         go.GetComponentInChildren<Squish>().onSquishStateChanged.AddListener(CheckForAttackReady);
         partSys = Instantiate(particles, go.transform).GetComponent<ParticleSystem>();
         partSys.transform.localPosition = Vector3.zero;
+        if (owner.tag == "Player") targetTag = "Enemy";
+        if (owner.tag == "Enemy") targetTag = "Player";
     }
 
     public override void Perform()
@@ -40,7 +43,7 @@ public class BounceAttack : Skill
 
         foreach (var hit in hits)
         {
-            if (hit.tag == "Enemy")
+            if (hit.tag == targetTag)
             {
                 var hp = hit.GetComponent<Health>();
                 if (hp != null)

@@ -24,6 +24,7 @@ public class Squish : MonoBehaviour
     float timeInAnimation = 0f;
 
     private Quaternion initialRot;
+    private Vector3 initialPos;
 
     public enum SquishState
     {
@@ -38,6 +39,7 @@ public class Squish : MonoBehaviour
     {
         Rigidbody = GetComponentInParent<Rigidbody2D>();
         initialRot = transform.rotation;
+        initialPos = transform.localPosition;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -74,12 +76,12 @@ public class Squish : MonoBehaviour
                 }
 
                 float targetZ = Mathf.Sign(velocity.x) * Mathf.Sin(timeInAnimation) * DirectionalRotationDegrees;
-                Quaternion targetRot = Quaternion.Euler(initialRot.x, 0, targetZ);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, DirectionalRotationSpeed * Time.deltaTime);
+                Quaternion targetRot = Quaternion.Euler(-30, 0, targetZ);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, DirectionalRotationSpeed * Time.deltaTime);
             }
             else
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, DirectionalRotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, initialRot, DirectionalRotationSpeed * Time.deltaTime);
             }
         }
 
@@ -103,30 +105,30 @@ public class Squish : MonoBehaviour
                     if (timeInAnimation > StretchTime + SmushTime)
                         SetState(SquishState.SecondSmush);
 
-                    if (timeInAnimation < (StretchTime/2) + SmushTime)
+                    if (timeInAnimation < (StretchTime / 2) + SmushTime)
                         z = Mathf.Lerp(transform.localPosition.z, VerticalJumpHeight, VerticalJumpSpeed * Time.deltaTime);
                     else
                         z = Mathf.Lerp(transform.localPosition.z, 0.1f, VerticalJumpSpeed * Time.deltaTime);
 
                     break;
                 case SquishState.SecondSmush:
-                    if (timeInAnimation > StretchTime + 2*SmushTime)
+                    if (timeInAnimation > StretchTime + 2 * SmushTime)
                         SetState(SquishState.Neutral);
                     break;
                 case SquishState.Neutral:
-                    if (timeInAnimation > StretchTime + 2*SmushTime + NeutralTime)
+                    if (timeInAnimation > StretchTime + 2 * SmushTime + NeutralTime)
                         SetState(SquishState.Immobile);
                     break;
             }
 
-            transform.localPosition = new Vector3(0, 0, z);
+            transform.localPosition = new Vector3(0, initialPos.y, z);
         }
 
         float scaleX, scaleY = 1f;
         switch (State)
         {
             case SquishState.Squish:
-                scaleY = 1f +  StretchAmount / 10;
+                scaleY = 1f + StretchAmount / 10;
                 scaleX = 1f / scaleY;
                 break;
             case SquishState.SecondSmush:
