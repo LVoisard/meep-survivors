@@ -24,22 +24,22 @@ public abstract class Skill : ScriptableObject
         return ready;
     }
 
-    protected virtual Vector3[] FindTargets(Vector3 pos)
+    protected virtual Transform[] FindTargets(Vector3 pos)
     {
         return FindObjectsByType<Enemy>(FindObjectsSortMode.None)
-            .Select(x => x.transform.position)
-            .OrderBy(x => Vector3.Distance(pos, x))
+            .Select(x => x.transform)
+            .OrderBy(x => Vector3.Distance(pos, x.position))
             .Take(targetCount + effectors.AdditionalTargets)
             .ToArray();
     }
 
     public struct SkillEffectors // in %
     {
-        public float AreaOfEffect; // in %
-        public float Damage; // in %
+        public float AreaOfEffect; // in 100%
+        public float Damage; // in 50%
         public float CooldownReduction; // in %
         public float Duration; // in %
         public float Speed; // in %
-        public int AdditionalTargets; // in #
+        public int AdditionalTargets; // in 2#
     }
 }

@@ -14,7 +14,7 @@ public class FireProjectileSkill : Skill
         var pos = owner.transform.position;
         foreach (var target in FindTargets(pos))
         {
-            Vector3 ab = target - pos;
+            Vector3 ab = target.position - pos;
             Vector3 dir = ab.normalized;
             BasicBullet projInst = Instantiate(projectile);
             projInst.transform.position = pos + dir;
