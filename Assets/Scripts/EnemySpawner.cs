@@ -6,15 +6,25 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private SpriteRenderer arenaSprite;
     [SerializeField] private Enemy[] enemyPrefabs;
+    [SerializeField] private Enemy bossPrefab;
     [SerializeField] private GameObject enemyContainer;
 
     [SerializeField] private float spawnCooldown;
     [SerializeField] private int spawnAmount;
+    [SerializeField] private int bossCountdown = 180;
 
     private bool spawnCooldownReady = true;
 
     float stageDuration = 0;
 
+
+    void Start()
+    {
+        Helper.Wait(bossCountdown, () =>
+        {
+            Instantiate(bossPrefab);
+        });
+    }
 
     // Update is called once per frame
     void Update()

@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     PlayerMovement playerEntity;
     Rigidbody2D rigidbody2D;
-    [SerializeField] private float speed = 5;
+    [SerializeField] protected float speed = 5;
     public bool rooted = false;
 
 
