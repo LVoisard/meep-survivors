@@ -636,7 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   arenaSprite: {fileID: 1926643823}
-  enemyPrefab: {fileID: 7272628508442995062, guid: 5a4887b212401f5a9bd95ee099b78732, type: 3}
+  enemyPrefabs:
+  - {fileID: 7272628508442995062, guid: 5a4887b212401f5a9bd95ee099b78732, type: 3}
   enemyContainer: {fileID: 1059686824}
   spawnCooldown: 1
   spawnAmount: 4

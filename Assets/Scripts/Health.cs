@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
 
     [SerializeField] private float maxHealth;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private float currentHealth;
+
+    public UnityEvent onDied = new UnityEvent();
 
     private void Awake()
     {
@@ -13,13 +17,13 @@ public class Health : MonoBehaviour
 
     public void Heal(float amt)
     {
-        currentHealth = Mathf.Min(currentHealth+amt, maxHealth);
+        currentHealth = Mathf.Min(currentHealth + amt, maxHealth);
     }
 
     public bool TakeDamage(float dmg)
     {
         currentHealth -= dmg;
-
+        spriteRenderer.color = Color.softRed;
         if (currentHealth <= 0.0f)
         {
             currentHealth = 0;
@@ -27,11 +31,14 @@ public class Health : MonoBehaviour
             return true;
         }
 
+        Helper.Wait(0.05f, () => spriteRenderer.color = Color.white);
+
         return false;
     }
 
     private void Die()
     {
+        onDied?.Invoke();
         Destroy(gameObject);
     }
 }

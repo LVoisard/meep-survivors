@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] private SpriteRenderer arenaSprite;
-    [SerializeField] private Enemy enemyPrefab;
+    [SerializeField] private Enemy[] enemyPrefabs;
     [SerializeField] private GameObject enemyContainer;
 
     [SerializeField] private float spawnCooldown;
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
             float yPos = !side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.y, arenaSprite.bounds.extents.y) : mult * arenaSprite.bounds.extents.y;
 
 
-            Enemy go = Instantiate(enemyPrefab, new Vector3(xPos, yPos, 0), enemyPrefab.transform.rotation, enemyContainer.transform);
+            Enemy go = Instantiate(enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Length)], new Vector3(xPos, yPos, 0), enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Length)].transform.rotation, enemyContainer.transform);
         }
 
         Helper.Wait(spawnCooldown, () =>

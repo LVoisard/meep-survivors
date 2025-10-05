@@ -24,9 +24,9 @@ public abstract class Skill : ScriptableObject
         return ready;
     }
 
-    protected virtual Transform[] FindTargets(Vector3 pos)
+    protected virtual Transform[] FindTargets<T>(Vector3 pos) where T : MonoBehaviour
     {
-        return FindObjectsByType<Enemy>(FindObjectsSortMode.None)
+        return FindObjectsByType<T>(FindObjectsSortMode.None)
             .Select(x => x.transform)
             .OrderBy(x => Vector3.Distance(pos, x.position))
             .Take(targetCount + effectors.AdditionalTargets)

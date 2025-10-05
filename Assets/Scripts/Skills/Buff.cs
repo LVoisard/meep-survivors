@@ -15,16 +15,16 @@ public class Buff : Skill
 
     private void BuffTargets()
     {
-        var targets = FindTargets(owner.transform.position);
+        var targets = FindTargets<BaseMeep>(owner.transform.position);
         foreach (var targ in targets)
         {
             //get effectors, upgrade them.
         }
     }
 
-    protected override Transform[] FindTargets(Vector3 pos)
+    protected override Transform[] FindTargets<T>(Vector3 pos)
     {
-        return FindObjectsByType<BaseMeep>(FindObjectsSortMode.None)
+        return FindObjectsByType<T>(FindObjectsSortMode.None)
             .Select(x => x.transform)
             .OrderBy(x => Vector3.Distance(pos, x.position))
             .Take(targetCount + effectors.AdditionalTargets)
