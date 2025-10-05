@@ -10,7 +10,7 @@ public class SharkFins : Skill
     public override void Perform()
     {
         var pos = owner.transform.position;
-        foreach (var target in FindTargets(pos))
+        foreach (var target in FindTargets<Enemy>(pos))
         {
             Vector3 ab = target.position - pos;
             Vector3 dir = ab.normalized;

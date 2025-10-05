@@ -15,7 +15,7 @@ public class LightingStikeSkill : Skill
 
     private void StrikeTargets()
     {
-        var targets = FindTargets(owner.transform.position);
+        var targets = FindTargets<Enemy>(owner.transform.position);
         foreach (var targ in targets)
         {
             // TODO ADD VFX
@@ -23,9 +23,9 @@ public class LightingStikeSkill : Skill
         }
     }
 
-    protected override Transform[] FindTargets(Vector3 pos)
+    protected override Transform[] FindTargets<T>(Vector3 pos)
     {
-        var enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None)
+        var enemies = FindObjectsByType<T>(FindObjectsSortMode.None)
             .Select(x => x.transform).ToList();
 
         Transform[] targs = new Transform[this.targetCount + effectors.AdditionalTargets];

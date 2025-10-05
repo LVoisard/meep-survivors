@@ -11,14 +11,14 @@ public class FireProjectileSkill : Skill
     public override void Perform()
     {
         var pos = owner.transform.position;
-        foreach (var target in FindTargets(pos))
+        foreach (var target in FindTargets<Enemy>(pos))
         {
             Vector3 ab = target.position - pos;
             Vector3 dir = ab.normalized;
             BasicBullet projInst = Instantiate(projectile);
             projInst.transform.position = pos + dir;
             projInst.transform.forward = dir;
-            projInst.SetStats(dmg, effectors);
+            projInst.SetStats("Enemy", dmg, effectors);
         }
 
         ready = false;

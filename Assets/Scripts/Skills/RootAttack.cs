@@ -16,7 +16,7 @@ public class RootAttack : Skill
 
     private void RootEnemies()
     {
-        var targets = FindTargets(owner.transform.position);
+        var targets = FindTargets<Enemy>(owner.transform.position);
 
         foreach (var target in targets)
         {

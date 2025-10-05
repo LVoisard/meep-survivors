@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7272628508442995062}
   - component: {fileID: 8892169557832131268}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Minion Basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.745283, g: 0.017577427, b: 0.017577427, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bbebcb8fe1ea4e300b7c2c12761e856a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,7 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ff86962de5582ba8e55ac2af1430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 2
+  speed: 1
+  rooted: 0
 --- !u!114 &8892169557832131268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,4 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 5
+  maxHealth: 15
+  spriteRenderer: {fileID: 3444577304940379827}
+  onDied:
+    m_PersistentCalls:
+      m_Calls: []
