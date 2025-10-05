@@ -18,6 +18,7 @@ public class BounceAttack : Skill
         partSys = Instantiate(particles, go.transform).GetComponent<ParticleSystem>();
         partSys.transform.localPosition = Vector3.zero;
     }
+
     public override void Perform()
     {
         ready = false;
@@ -25,11 +26,17 @@ public class BounceAttack : Skill
         Helper.Wait(0.1f, DealDamageInRadius);
     }
 
+    public override void ApplyEffectors(SkillEffectors effectors)
+    {
+        base.ApplyEffectors(effectors);
+        partSys.transform.localScale = Vector3.one * (1f + effectors.AreaOfEffect / 100f);
+    }
+
 
     private void DealDamageInRadius()
     {
         var pos = owner.transform.position;
-        Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), radius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), radius * (100f + effectors.AreaOfEffect) / 100f);
 
         foreach (var hit in hits)
         {
@@ -38,7 +45,7 @@ public class BounceAttack : Skill
                 var hp = hit.GetComponent<Health>();
                 if (hp != null)
                 {
-                    hp.TakeDamage(damage);
+                    hp.TakeDamage(damage * (100f + effectors.Damage) / 100f);
                 }
             }
         }

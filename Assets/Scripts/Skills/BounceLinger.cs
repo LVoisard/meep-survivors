@@ -24,7 +24,7 @@ public class BounceLinger : Skill
         Vector3 pos = owner.transform.position;
         pos.z = 0;
         DamageOverTime dmg = Instantiate(groundEffectPrefab, pos, Quaternion.identity);
-        dmg.Setup(damageOverTime, duration);
+        dmg.Setup(damageOverTime, duration, effectors);
     }
 
     private void CheckForAttackReady(Squish.SquishState state)

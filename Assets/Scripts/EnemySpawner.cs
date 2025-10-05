@@ -14,12 +14,6 @@ public class EnemySpawner : MonoBehaviour
     private bool spawnCooldownReady = true;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Debug.Log(arenaSprite.bounds.size);
-    }
-
     // Update is called once per frame
     void Update()
     {

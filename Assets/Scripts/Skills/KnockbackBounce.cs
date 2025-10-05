@@ -20,7 +20,7 @@ public class KnockbackBounce : Skill
     private void KnockbackInRadius()
     {
         var pos = owner.transform.position;
-        Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), radius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(new Vector2(pos.x, pos.y), radius * (100f + effectors.AreaOfEffect) / 100f);
 
         foreach (var hit in hits)
         {

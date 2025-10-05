@@ -19,10 +19,10 @@ public class FireProjectileSkill : Skill
             BasicBullet projInst = Instantiate(projectile);
             projInst.transform.position = pos + dir;
             projInst.transform.forward = dir;
-            projInst.SetStats(dmg);
+            projInst.SetStats(dmg, effectors);
         }
 
         ready = false;
-        Helper.Wait(cooldown, () => ready = true);
+        Helper.Wait(cooldown / (1f + (effectors.CooldownReduction / 100f)), () => ready = true);
     }
 }
