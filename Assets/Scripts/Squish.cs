@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Squish : MonoBehaviour
 {
     private Rigidbody2D Rigidbody;
-    private SquishState State;
+    [SerializeField] private SquishState State;
 
     public UnityEvent<SquishState> onSquishStateChanged;
 
@@ -28,8 +28,9 @@ public class Squish : MonoBehaviour
     public enum SquishState
     {
         Immobile,
+        FirstSmush,
         Squish,
-        Smush,
+        SecondSmush,
         Neutral
     }
 
@@ -69,7 +70,7 @@ public class Squish : MonoBehaviour
                 if (!isAnimationPlaying)
                 {
                     isAnimationPlaying = true;
-                    SetState(SquishState.Squish);
+                    SetState(SquishState.FirstSmush);
                 }
 
                 float targetZ = Mathf.Sign(velocity.x) * Mathf.Sin(timeInAnimation) * DirectionalRotationDegrees;
@@ -94,24 +95,27 @@ public class Squish : MonoBehaviour
                     timeInAnimation = 0f;
                     z = 0f;
                     break;
-                case SquishState.Neutral:
-                    if (timeInAnimation > StretchTime + SmushTime + NeutralTime)
-                        SetState(SquishState.Immobile);
+                case SquishState.FirstSmush:
+                    if (timeInAnimation > SmushTime)
+                        SetState(SquishState.Squish);
                     break;
                 case SquishState.Squish:
-                    if (timeInAnimation > StretchTime)
-                        SetState(SquishState.Smush);
+                    if (timeInAnimation > StretchTime + SmushTime)
+                        SetState(SquishState.SecondSmush);
 
-                    if (timeInAnimation < StretchTime/2)
+                    if (timeInAnimation < (StretchTime/2) + SmushTime)
                         z = Mathf.Lerp(transform.localPosition.z, VerticalJumpHeight, VerticalJumpSpeed * Time.deltaTime);
                     else
                         z = Mathf.Lerp(transform.localPosition.z, 0.1f, VerticalJumpSpeed * Time.deltaTime);
 
                     break;
-                case SquishState.Smush:
-                    if (timeInAnimation > StretchTime + SmushTime)
+                case SquishState.SecondSmush:
+                    if (timeInAnimation > StretchTime + 2*SmushTime)
                         SetState(SquishState.Neutral);
-
+                    break;
+                case SquishState.Neutral:
+                    if (timeInAnimation > StretchTime + 2*SmushTime + NeutralTime)
+                        SetState(SquishState.Immobile);
                     break;
             }
 
@@ -125,7 +129,7 @@ public class Squish : MonoBehaviour
                 scaleY = 1f +  StretchAmount / 10;
                 scaleX = 1f / scaleY;
                 break;
-            case SquishState.Smush:
+            case SquishState.SecondSmush:
                 scaleX = 1f + SmushAmount / 10;
                 scaleY = 1f / scaleX;
                 break;
