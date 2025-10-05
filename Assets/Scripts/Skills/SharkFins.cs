@@ -1,10 +1,9 @@
-using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Skills", menuName = "Skill/FireProjectile")]
-public class FireProjectileSkill : Skill
+[CreateAssetMenu(fileName = "Skills", menuName = "Skill/SharkFins")]
+public class SharkFins : Skill
 {
-    [SerializeField] private BasicBullet projectile;
+    [SerializeField] private SharkFinProjectile projectile;
     [SerializeField] private float cooldown;
     [SerializeField] private float dmg;
 
@@ -15,10 +14,11 @@ public class FireProjectileSkill : Skill
         {
             Vector3 ab = target.position - pos;
             Vector3 dir = ab.normalized;
-            BasicBullet projInst = Instantiate(projectile);
+            SharkFinProjectile projInst = Instantiate(projectile);
             projInst.transform.position = pos + dir;
             projInst.transform.forward = dir;
             projInst.SetStats(dmg, effectors);
+            projInst.SetTranformCenter(owner.transform);
         }
 
         ready = false;

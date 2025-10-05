@@ -1,0 +1,33 @@
+using System.Linq;
+using UnityEngine;
+
+public class Buff : Skill
+{
+    [SerializeField] private float boostAmount = 1f;
+    [SerializeField] private float cooldown = 1f;
+
+    public override void Perform()
+    {
+        ready = false;
+        BuffTargets();
+        Helper.Wait(cooldown / (1f + (effectors.CooldownReduction / 100f)), () => ready = true);
+    }
+
+    private void BuffTargets()
+    {
+        var targets = FindTargets(owner.transform.position);
+        foreach (var targ in targets)
+        {
+            //get effectors, upgrade them.
+        }
+    }
+
+    protected override Transform[] FindTargets(Vector3 pos)
+    {
+        return FindObjectsByType<BaseMeep>(FindObjectsSortMode.None)
+            .Select(x => x.transform)
+            .OrderBy(x => Vector3.Distance(pos, x.position))
+            .Take(targetCount + effectors.AdditionalTargets)
+            .ToArray();
+    }
+}

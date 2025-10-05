@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7437202917090692753}
   - component: {fileID: 8943560715151558768}
   - component: {fileID: 3831762607925521191}
+  - component: {fileID: 8449044917748751305}
   m_Layer: 0
   m_Name: Meep
   m_TagString: Untagged
@@ -214,3 +215,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8449044917748751305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 0

@@ -315,6 +315,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598654881226083786, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+      propertyPath: MeepType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4946515311963833315, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -430,7 +434,7 @@ SpriteRenderer:
   m_SortingLayerID: 410643243
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f85540d84a2a0764a8d1b19caa7806fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -450,8 +454,8 @@ Transform:
   m_GameObject: {fileID: 335522194}
   serializedVersion: 2
   m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 1.43012, y: 0.49065, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.2951, y: 0.6134, z: 0}
+  m_LocalScale: {x: 0.88, y: 0.8801, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -493,8 +497,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.25, y: 2.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -515,8 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lootbox
   rotateSpeed: 200
-  zoomSpeed: 2
-  maxScale: 30
+  zoomSpeed: 1
+  maxScale: 10
 --- !u!1001 &337653264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,6 +529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598654881226083786, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+      propertyPath: MeepType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4946515311963833315, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -822,6 +830,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598654881226083786, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+      propertyPath: MeepType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4946515311963833315, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -976,6 +988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598654881226083786, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+      propertyPath: MeepType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4946515311963833315, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -1076,6 +1092,97 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1595020697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
+  skill: {fileID: 11400000, guid: 7c315203084a1434bbcb053c0b5aa4f5, type: 2}
+--- !u!114 &1595020698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
+  value: 0
+--- !u!114 &1595020699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bccfeecee3dd899a6aa65889b2a04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedEffector
+  value: 0
+--- !u!114 &1595020700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e889902f18e5b608173a2d6fe52f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DurationEffector
+  value: 0
+--- !u!114 &1595020701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
+  value: 0
+--- !u!114 &1595020702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d0da7ca5a7671d0a9bf84c2a050f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CooldownEffector
+  value: 0
+--- !u!114 &1595020703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595020687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
+  value: 0
 --- !u!1 &1622202971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1795,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1595020692}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020703}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020702}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020701}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020700}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020699}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020698}
+    - targetCorrespondingSourceObject: {fileID: 4690229549499287595, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595020697}
     - targetCorrespondingSourceObject: {fileID: 8035866012808942916, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1453662572}
