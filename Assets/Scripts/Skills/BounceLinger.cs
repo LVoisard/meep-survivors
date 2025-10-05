@@ -21,13 +21,15 @@ public class BounceLinger : Skill
 
     private void CreateGroundEffect()
     {
-        DamageOverTime dmg = Instantiate(groundEffectPrefab, owner.transform.position, Quaternion.identity);
+        Vector3 pos = owner.transform.position;
+        pos.z = 0;
+        DamageOverTime dmg = Instantiate(groundEffectPrefab, pos, Quaternion.identity);
         dmg.Setup(damageOverTime, duration);
     }
 
     private void CheckForAttackReady(Squish.SquishState state)
     {
-        if (state == Squish.SquishState.Smush)
+        if (state == Squish.SquishState.SecondSmush)
         {
             ready = true;
         }

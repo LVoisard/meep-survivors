@@ -35,7 +35,7 @@ public class KnockbackBounce : Skill
 
     private void CheckForAttackReady(Squish.SquishState state)
     {
-        if (state == Squish.SquishState.Smush)
+        if (state == Squish.SquishState.SecondSmush)
         {
             ready = true;
         }
