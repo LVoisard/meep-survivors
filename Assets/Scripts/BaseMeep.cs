@@ -29,11 +29,21 @@ public class BaseMeep : MonoBehaviour
         Melee
     }
 
+    void UpdateVisuals()
+    {
+
+        if (Level == 1)
+            GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.MeepSpriteMap[(int)Type];
+        else
+            GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.UpgradedMeepSpriteMap[(int)Type];
+    }
+
     public new MeepType GetType() { return Type; }
     public void SetType(MeepType type)
     {
         Type = type;
-        GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.MeepSpriteMap[(int)type];
+
+        UpdateVisuals();
 
         MeepAttack attack = GetComponent<MeepAttack>();
 
@@ -66,6 +76,8 @@ public class BaseMeep : MonoBehaviour
     public void SetLevel(int lvl)
     {
         Level = lvl;
+
+        UpdateVisuals();
 
         //0.5, 1, 1.5 scale (player is size 1)
         transform.localScale = Vector3.zero;

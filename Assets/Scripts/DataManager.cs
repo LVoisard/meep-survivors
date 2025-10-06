@@ -39,6 +39,7 @@ public class DataManager : MonoBehaviour
     public GameObject MeepPrefab;
 
     public Sprite[] MeepSpriteMap;
+    public Sprite[] UpgradedMeepSpriteMap;
 
     public Skill[] Skills;
 
