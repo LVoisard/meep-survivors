@@ -59,6 +59,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01d21843edbb4574e9839c8421dedb51, type: 3}
   - {fileID: 21300000, guid: 6c3631e2febc66f41bec4a133dee6f3e, type: 3}
   - {fileID: 21300000, guid: bc598cd477bfb8e46a7da78a72a6b300, type: 3}
+  MegaUpgradedMeepSpriteMap:
+  - {fileID: 21300000, guid: d72ee5db6b768e54691c411007dc0477, type: 3}
+  - {fileID: 21300000, guid: c7cc9f201a1a8404dac1d716921d1130, type: 3}
+  - {fileID: 21300000, guid: bd474d25e90c49742b3495ce39a66cdc, type: 3}
+  - {fileID: 21300000, guid: 5acdcbfff8443e743826c6730b0c4297, type: 3}
+  - {fileID: 21300000, guid: 18fe18c748dbda044a9823e8755b1d07, type: 3}
   Skills:
   - {fileID: 11400000, guid: eab42d0c38929ca4e92a0e7e78a8a0f9, type: 2}
   - {fileID: 11400000, guid: 7c315203084a1434bbcb053c0b5aa4f5, type: 2}

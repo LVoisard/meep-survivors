@@ -31,11 +31,12 @@ public class BaseMeep : MonoBehaviour
 
     void UpdateVisuals()
     {
-
         if (Level == 1)
             GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.MeepSpriteMap[(int)Type];
-        else
+        else if (Level == 2)
             GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.UpgradedMeepSpriteMap[(int)Type];
+        else
+            GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.MegaUpgradedMeepSpriteMap[(int)Type];
     }
 
     public new MeepType GetType() { return Type; }
