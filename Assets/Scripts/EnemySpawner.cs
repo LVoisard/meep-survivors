@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Enemy go = Instantiate(bossPrefab);
             go.SetAsBoss(GetComponent<Level>());
-            go.transform.position = arenaSprite.transform.position = arenaSprite.bounds.center;
+            go.transform.position = arenaSprite.transform.position = arenaSprite.bounds.center + Vector3.down * 5f;
             foreach (AudioSource audio in bossAudio.transform.parent.GetComponentsInChildren<AudioSource>())
             {
                 audio.volume = 0f;
