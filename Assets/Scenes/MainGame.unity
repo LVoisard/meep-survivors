@@ -163,7 +163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 79db4a7d2887a6c40b28928b7fcc72a1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -354,7 +354,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 233aa8ee34462704a9c8bab2c7a9c297, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -857,7 +857,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1b88476512b652748ba94c9b97da8157, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -1411,7 +1411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a78355693da558c498713c327a356ff3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -1852,6 +1852,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+--- !u!1 &1252460760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1103405283285374513, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+  m_PrefabInstance: {fileID: 1796558935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276422234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1901,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: dbb10baeedce3e048b9740511192b42f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -2211,6 +2216,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3549278074266528996, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
   m_PrefabInstance: {fileID: 1796558935}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1651831135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252460760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ccf7e59ac74784e9e0065359e66778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartAllAudio
 --- !u!1 &1655168310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,7 +2459,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1acbf51db44b90a4f9213afdacab8d57, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
@@ -2572,6 +2589,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7107531531168830779, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107531531168830779, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       propertyPath: BypassReverbZones
       value: 1
       objectReference: {fileID: 0}
@@ -2657,6 +2678,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2082953061}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1103405283285374513, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1651831135}
     - targetCorrespondingSourceObject: {fileID: 8035866012808942916, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1346984246}
@@ -3070,6 +3094,10 @@ PrefabInstance:
       propertyPath: bossAudio
       value: 
       objectReference: {fileID: 1768528959}
+    - target: {fileID: 3077017740733486971, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: bossCountdown
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4411851830569147444, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
       propertyPath: nextLevel
       value: 
