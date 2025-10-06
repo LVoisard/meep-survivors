@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 3000
+  maxHealth: 15000
   spriteRenderer: {fileID: 65628337201460957}
   onDied:
     m_PersistentCalls:
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
-  value: 0
+  value: 200
 --- !u!114 &7190967448810084816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
-  value: 0
+  value: 100
 --- !u!114 &494594811680262158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
-  value: 0
+  value: 1
 --- !u!114 &3255822348962590813
 MonoBehaviour:
   m_ObjectHideFlags: 0

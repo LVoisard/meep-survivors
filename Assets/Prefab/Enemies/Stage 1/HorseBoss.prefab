@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
-  value: 25
+  value: 50
 --- !u!114 &5159427936162683265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 250
+  maxHealth: 500
   spriteRenderer: {fileID: 5997507363987407280}
   onDied:
     m_PersistentCalls:
