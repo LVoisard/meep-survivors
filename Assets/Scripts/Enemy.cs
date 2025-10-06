@@ -12,8 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed = 5;
     [SerializeField] protected float bodydamage = 1f;
     public bool rooted = false;
-    private bool isMiniboss = false;
-    private bool isBoss = false;
+    private bool isMiniboss;
 
     private void Awake()
     {
@@ -50,12 +49,6 @@ public class Enemy : MonoBehaviour
     {
         isMiniboss = true;
         transform.localScale = 2 * Vector2.one;
-    }
-
-    public void SetAsBoss(Level level)
-    {
-        isBoss = true;
-        GetComponent<Health>().onDied.AddListener(level.Complete);
     }
 
     private void OnEnemyDead()

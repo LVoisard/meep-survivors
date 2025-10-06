@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         Helper.Wait(bossCountdown, () =>
         {
             Enemy go = Instantiate(bossPrefab);
-            go.SetAsBoss(GetComponent<Level>());
+            go.GetComponent<Health>().onDied.AddListener(GetComponent<Level>().Complete);
         });
     }
 
