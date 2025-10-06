@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     static int EnemiesBetweenMeeps = 20;
 
     PlayerMovement playerEntity;
-    Rigidbody2D rigidbody2D;
+    protected Rigidbody2D rigidbody2D;
     [SerializeField] protected float speed = 5;
     [SerializeField] protected float bodydamage = 1f;
     public bool rooted = false;
