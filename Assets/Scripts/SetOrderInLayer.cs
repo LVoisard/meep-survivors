@@ -15,12 +15,6 @@ public class SetOrderInLayer : MonoBehaviour
 
     void Update()
     {
-        if (!Player)
-            Player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        if (!Sprite)
-            Sprite = GetComponent<SpriteRenderer>();
-
         if (Player.transform.position.y < Sprite.bounds.center.y)
         {
             Sprite.sortingOrder = 0;
