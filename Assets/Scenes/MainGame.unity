@@ -1747,6 +1747,10 @@ PrefabInstance:
       propertyPath: bossPrefab
       value: 
       objectReference: {fileID: 4832515205450101327, guid: a15ac6904f49df44f9b660d5a312264b, type: 3}
+    - target: {fileID: 6504261806439722626, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
+      propertyPath: bossCountdown
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6814082949399462537, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
       propertyPath: m_Volume
       value: 0.2

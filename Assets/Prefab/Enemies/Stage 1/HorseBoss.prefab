@@ -512,7 +512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The House
+  m_text: Chungus Khan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46366d126c65fd24e9654b4baee7d032, type: 2}
   m_sharedMaterial: {fileID: 1624660389188085108, guid: 46366d126c65fd24e9654b4baee7d032, type: 2}
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
-  value: 0
+  value: 25
 --- !u!114 &5159427936162683265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
-  value: 0
+  value: 50
 --- !u!114 &5693941587187274180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
-  value: 0
+  value: 1
 --- !u!114 &7756703908849042247
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class DataManager : MonoBehaviour
         stages[2].levelFinished.AddListener(() =>
         {
             Reset();
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("WinScene");
         });
     }
 
