@@ -75,6 +75,7 @@ public class MeepAttack : MonoBehaviour
                     source = GetComponent<AudioSource>();
                 }
 
+                source.volume = 0.5f;
                 source.PlayOneShot(skillCopy.OnPerform, .10f);
             }
         }

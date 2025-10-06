@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 3553740563030891486, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d345d549460d60448c46668cd49d294, type: 3}
     - target: {fileID: 3636273230442478232, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
       propertyPath: m_Sprite
       value: 
