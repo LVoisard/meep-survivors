@@ -15,6 +15,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int bossCountdown = 180;
     [SerializeField] private AudioSource bossAudio;
 
+    [SerializeField] private TMPro.TextMeshProUGUI countDownText;
+
     private bool spawnCooldownReady = true;
     private bool miniBossSpawnCooldownReady = true;
 
@@ -46,6 +48,16 @@ public class EnemySpawner : MonoBehaviour
         }
 
         stageDuration += Time.deltaTime;
+
+        if (bossCountdown - (int)stageDuration <= 1)
+        {
+            countDownText.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            countDownText.text = $"{bossCountdown - (int)stageDuration} second(s)";
+        }
+
     }
 
     private void SpawnMiniBoss()

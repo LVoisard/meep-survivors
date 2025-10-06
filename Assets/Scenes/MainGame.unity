@@ -1558,46 +1558,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290101029376138174, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290101029376138174, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290101029376138174, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290101029376138174, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401010294287920982, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
       propertyPath: nextStageSpawn
       value: 
       objectReference: {fileID: 89898444}
-    - target: {fileID: 727585404897964644, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 727585404897964644, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 727585404897964644, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 727585404897964644, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950195941525943152, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950195941525943152, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950195941525943152, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950195941525943152, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3077017740733486971, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
-      propertyPath: bossCountdown
-      value: 197
-      objectReference: {fileID: 0}
     - target: {fileID: 4411851830569147444, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
       propertyPath: nextLevel
       value: 
@@ -1646,6 +1626,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 8702075905828307017, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711038383881732338, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711038383881732338, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711038383881732338, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711038383881732338, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1659,21 +1659,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 303425796743623, guid: 60089e0f30478d0489242ffd0a127c69, type: 3}
-      propertyPath: bossPrefab
-      value: 
-      objectReference: {fileID: 6299507742994292444, guid: b25ec622c8f8f62828517696cd37bdc1, type: 3}
-    - target: {fileID: 303425796743623, guid: 60089e0f30478d0489242ffd0a127c69, type: 3}
-      propertyPath: bossCountdown
-      value: 197
-      objectReference: {fileID: 0}
     - target: {fileID: 1847663153486670410, guid: 60089e0f30478d0489242ffd0a127c69, type: 3}
       propertyPath: m_Name
       value: Level3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1847663153486670410, guid: 60089e0f30478d0489242ffd0a127c69, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6107990680434087300, guid: 60089e0f30478d0489242ffd0a127c69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1751,30 +1739,6 @@ PrefabInstance:
       propertyPath: nextStageSpawn
       value: 
       objectReference: {fileID: 823483264}
-    - target: {fileID: 6504261806439722626, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: bossPrefab
-      value: 
-      objectReference: {fileID: 4832515205450101327, guid: a15ac6904f49df44f9b660d5a312264b, type: 3}
-    - target: {fileID: 6504261806439722626, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: bossCountdown
-      value: 187
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814082949399462537, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814082949399462537, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814082949399462537, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814082949399462537, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6953594807597878239, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1814,22 +1778,6 @@ PrefabInstance:
     - target: {fileID: 6953594807597878239, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637740747431105596, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637740747431105596, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637740747431105596, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassReverbZones
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637740747431105596, guid: b3b544e92aa9dc240a007f8b651d12dc, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
