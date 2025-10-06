@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HorseBoss : Enemy
 {
-    Rigidbody2D bod;
     List<BossWaypoint> waypoints;
     // Update is called once per frame
 
@@ -15,7 +14,6 @@ public class HorseBoss : Enemy
 
     void Awake()
     {
-        bod = GetComponent<Rigidbody2D>();
         waypoints = FindObjectsByType<BossWaypoint>(FindObjectsSortMode.InstanceID).ToList();
 
         transform.position = waypoints[0].transform.position;
@@ -24,8 +22,8 @@ public class HorseBoss : Enemy
     {
         if (state == WaypointState.Tracking)
         {
-            bod.linearVelocity = Vector3.Lerp(bod.linearVelocity, (waypoints[currentWaypointIndex].transform.position - transform.position).normalized * speed, Time.fixedDeltaTime);
-            if (Vector3.Distance(bod.transform.position, waypoints[currentWaypointIndex].transform.position) < 5)
+            GetComponent<Rigidbody2D>().linearVelocity = Vector3.Lerp(GetComponent<Rigidbody2D>().linearVelocity, (waypoints[currentWaypointIndex].transform.position - transform.position).normalized * speed, Time.fixedDeltaTime);
+            if (Vector3.Distance(GetComponent<Rigidbody2D>().transform.position, waypoints[currentWaypointIndex].transform.position) < 5)
             {
                 state = WaypointState.Arrived;
                 currentWaypointIndex++;
@@ -42,7 +40,7 @@ public class HorseBoss : Enemy
         {
             var newX = Mathf.Cos(Time.time);
             var newY = Mathf.Sin(Time.time);
-            bod.linearVelocity = Vector2.Lerp(bod.linearVelocity, new Vector2(newX, newY) * 2f, Time.fixedDeltaTime * 5f);
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.Lerp(GetComponent<Rigidbody2D>().linearVelocity, new Vector2(newX, newY) * 2f, Time.fixedDeltaTime * 5f);
         }
     }
 

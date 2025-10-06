@@ -11,6 +11,8 @@ public class SharkFinProjectile : MonoBehaviour
     private Skill.SkillEffectors effectors;
     private Transform center;
 
+    private string targetTag = "Enemy";
+
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -27,8 +29,9 @@ public class SharkFinProjectile : MonoBehaviour
         transform.position = center.position + offset;
     }
 
-    public void SetStats(float dmg, Skill.SkillEffectors eff)
+    public void SetStats(string tag, float dmg, Skill.SkillEffectors eff)
     {
+        this.targetTag = tag;
         damage = dmg;
         effectors = eff;
     }
@@ -40,7 +43,7 @@ public class SharkFinProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == targetTag)
         {
             var pierce = GetComponent<Pierce>();
             var chain = GetComponent<Chain>();
@@ -70,7 +73,7 @@ public class SharkFinProjectile : MonoBehaviour
 
                 foreach (var hit in hits)
                 {
-                    if (hit.tag == "Enemy")
+                    if (hit.tag == targetTag)
                     {
                         var hp2 = hit.GetComponent<Health>();
                         if (hp2 != null)
