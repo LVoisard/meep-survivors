@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 653680135905169145}
   - component: {fileID: 9201864089643277411}
   - component: {fileID: 6170289416076977475}
+  - component: {fileID: 9079510495625547796}
   m_Layer: 0
   m_Name: cave1
   m_TagString: Untagged
@@ -793,6 +794,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.088, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &9079510495625547796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154241724149476348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &2333700797433958201
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +817,7 @@ GameObject:
   - component: {fileID: 7496611461322486774}
   - component: {fileID: 8371881625428593984}
   - component: {fileID: 6008471947572992255}
+  - component: {fileID: 1222372249928342947}
   m_Layer: 0
   m_Name: ruins3
   m_TagString: Untagged
@@ -930,6 +944,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &1222372249928342947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333700797433958201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &2534435342433810313
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +967,7 @@ GameObject:
   - component: {fileID: 3963292371216926001}
   - component: {fileID: 357317528464070478}
   - component: {fileID: 1162106401214755237}
+  - component: {fileID: 9155349407609775232}
   m_Layer: 0
   m_Name: ruins2
   m_TagString: Untagged
@@ -1067,6 +1094,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.92, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &9155349407609775232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534435342433810313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &2736901818581275180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2957,7 @@ GameObject:
   - component: {fileID: 366310547303476574}
   - component: {fileID: 7167741408033818337}
   - component: {fileID: 4404951936861681877}
+  - component: {fileID: 271607183906252159}
   m_Layer: 0
   m_Name: ruins2 (1)
   m_TagString: Untagged
@@ -3044,6 +3084,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.92, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &271607183906252159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5536570952754401857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &6672723362745333328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3617,7 @@ GameObject:
   - component: {fileID: 1822138337879643262}
   - component: {fileID: 1180868030079537256}
   - component: {fileID: 6256724650876611435}
+  - component: {fileID: 3614216389855106449}
   m_Layer: 0
   m_Name: ruins1
   m_TagString: Untagged
@@ -3737,6 +3790,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3614216389855106449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998104345599756692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &8309662402375650275
 GameObject:
   m_ObjectHideFlags: 0

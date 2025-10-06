@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3912162007376208530}
   - component: {fileID: 6932254979131806880}
   - component: {fileID: 2588347637280238123}
+  - component: {fileID: 9201252737521837418}
   m_Layer: 0
   m_Name: ruins3
   m_TagString: Untagged
@@ -137,6 +138,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.22, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9201252737521837418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051007835264832465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &1104612869951734591
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +293,7 @@ GameObject:
   - component: {fileID: 3511105590870919648}
   - component: {fileID: 1079505714041467546}
   - component: {fileID: 4984236537186984245}
+  - component: {fileID: 6032166747502643960}
   m_Layer: 0
   m_Name: ruins1
   m_TagString: Untagged
@@ -406,6 +420,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.07, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6032166747502643960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427697894219795037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &3434944916779688985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1502,7 @@ GameObject:
   - component: {fileID: 8520290366002603273}
   - component: {fileID: 7704174358862565296}
   - component: {fileID: 5486415144225513953}
+  - component: {fileID: 486639162415413562}
   m_Layer: 0
   m_Name: ruins4
   m_TagString: Untagged
@@ -1602,6 +1629,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.76, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &486639162415413562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955297706219789794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &5182445752518315992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1652,7 @@ GameObject:
   - component: {fileID: 7081748281518046096}
   - component: {fileID: 1016595162345868605}
   - component: {fileID: 2736936278498210591}
+  - component: {fileID: 8104783361093939380}
   m_Layer: 0
   m_Name: ruins2 (2)
   m_TagString: Untagged
@@ -1739,6 +1779,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.16, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8104783361093939380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182445752518315992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &6091318724789865489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2131,7 @@ GameObject:
   - component: {fileID: 2326626019917513254}
   - component: {fileID: 3860862178779486004}
   - component: {fileID: 5400717827136492341}
+  - component: {fileID: 1025871449694694864}
   m_Layer: 0
   m_Name: skeleton1 (1)
   m_TagString: Untagged
@@ -2205,6 +2258,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.24, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1025871449694694864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517631147714134301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &7965163841888203649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2417,7 @@ GameObject:
   - component: {fileID: 2739872166199777913}
   - component: {fileID: 8177916318372352384}
   - component: {fileID: 3324160216631988021}
+  - component: {fileID: 8149445420203596766}
   m_Layer: 0
   m_Name: ruins2 (1)
   m_TagString: Untagged
@@ -2478,6 +2544,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.16, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8149445420203596766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313591916340214628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2feabd6c2cb7bec4c941746f0c018bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetOrderInLayer
 --- !u!1 &8913310320559806397
 GameObject:
   m_ObjectHideFlags: 0
