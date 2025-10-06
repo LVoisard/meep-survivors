@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 750
+  maxHealth: 3000
   spriteRenderer: {fileID: 65628337201460957}
   onDied:
     m_PersistentCalls:
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 3
-  bodydamage: 1
+  bodydamage: 25
   rooted: 0
   enemyPrefab: {fileID: 7272628508442995062, guid: 0fab12021716718c09be27e391bd3edf, type: 3}
   spawnOnStompCount: 5

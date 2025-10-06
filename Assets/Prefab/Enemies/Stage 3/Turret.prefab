@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 80
+  maxHealth: 160
   spriteRenderer: {fileID: 3444577304940379827}
   onDied:
     m_PersistentCalls:
@@ -206,5 +206,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
   shotPrefab: {fileID: -660805927475677602, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
-  damage: 2
+  damage: 10
   cooldown: 7
