@@ -8,10 +8,14 @@ public class BounceLinger : Skill
     [SerializeField] private float duration;
     [SerializeField] private DamageOverTime groundEffectPrefab;
 
+    string targetTag = "Enemy";
+
     public override void SetOwner(GameObject go)
     {
         base.SetOwner(go);
         go.GetComponentInChildren<Squish>().onSquishStateChanged.AddListener(CheckForAttackReady);
+        if (owner.tag == "Player") targetTag = "Enemy";
+        if (owner.tag == "Enemy") targetTag = "Player";
     }
     public override void Perform()
     {
@@ -24,7 +28,7 @@ public class BounceLinger : Skill
         Vector3 pos = owner.transform.position;
         pos.z = 0;
         DamageOverTime dmg = Instantiate(groundEffectPrefab, pos, Quaternion.identity);
-        dmg.Setup(damageOverTime, duration, effectors);
+        dmg.Setup(targetTag, damageOverTime, duration, effectors);
     }
 
     private void CheckForAttackReady(Squish.SquishState state)

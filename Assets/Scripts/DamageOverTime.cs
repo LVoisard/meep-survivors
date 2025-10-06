@@ -7,8 +7,11 @@ public class DamageOverTime : MonoBehaviour
     [SerializeField] private float radius;
 
     Skill.SkillEffectors effectors;
-    public void Setup(float dmg, float duration, Skill.SkillEffectors effectors)
+
+    string targetTag;
+    public void Setup(string tag, float dmg, float duration, Skill.SkillEffectors effectors)
     {
+        targetTag = tag;
         damage = dmg;
         this.duration = duration;
 
@@ -22,7 +25,7 @@ public class DamageOverTime : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            if (hit.tag == "Enemy")
+            if (hit.tag == targetTag)
             {
                 var hp = hit.GetComponent<Health>();
                 if (hp != null)

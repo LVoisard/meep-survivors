@@ -14,6 +14,7 @@ public class HorseBoss : Enemy
 
     void Awake()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         waypoints = FindObjectsByType<BossWaypoint>(FindObjectsSortMode.InstanceID).ToList();
 
         transform.position = waypoints[0].transform.position;

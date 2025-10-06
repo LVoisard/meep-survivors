@@ -5,10 +5,13 @@ public class KnockbackBounce : Skill
 {
     [SerializeField] private float radius;
 
+    private string targetTag = "Enemy";
     public override void SetOwner(GameObject go)
     {
         base.SetOwner(go);
         go.GetComponentInChildren<Squish>().onSquishStateChanged.AddListener(CheckForAttackReady);
+        if (owner.tag == "Player") targetTag = "Enemy";
+        if (owner.tag == "Enemy") targetTag = "Player";
     }
 
     public override void Perform()
@@ -24,7 +27,7 @@ public class KnockbackBounce : Skill
 
         foreach (var hit in hits)
         {
-            if (hit.tag == "Enemy")
+            if (hit.tag == targetTag)
             {
                 Vector3 force = hit.transform.position - pos;
                 hit.attachedRigidbody.AddForce(force.normalized * 10, ForceMode2D.Impulse);

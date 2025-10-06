@@ -15,6 +15,7 @@ public class SquidBoss : Enemy
     Skill.SkillEffectors e = new Skill.SkillEffectors();
     void Awake()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
