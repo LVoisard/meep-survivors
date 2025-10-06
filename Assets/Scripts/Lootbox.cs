@@ -52,7 +52,7 @@ public class Lootbox : MonoBehaviour
             {
                 int ind = i;
                 buttons[ind].onClick.AddListener(() => { ButtonClicked(randomIndices[ind]); });
-                texts[i].text = DataManager.Instance.LootboxDropTitles[randomIndices[i]];
+                texts[i+1].text = DataManager.Instance.LootboxDropTitles[randomIndices[i]]; //i+1, skip title
                 buttons[i].GetComponentsInChildren<Image>()[1].sprite = DataManager.Instance.LootboxDropUI[randomIndices[i]];
             }
         }
@@ -93,19 +93,12 @@ public class Lootbox : MonoBehaviour
                 att.UpdateSkillEffectors();
         }
 
-
-        Destroy(transform.gameObject);
-    }
-
-    /// <summary>
-    /// Fuck you kris
-    /// </summary>
-    void OnDestroy()
-    {
         Button[] buttons = canvas.GetComponentsInChildren<Button>();
         foreach (var button in buttons)
         {
             button.onClick.RemoveAllListeners();
         }
+
+        Destroy(transform.gameObject);
     }
 }
