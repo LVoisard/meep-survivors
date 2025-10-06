@@ -1307,6 +1307,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
+--- !u!1001 &1984314546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2314922904251467346, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_text
+      value: 'Collect Meeps
+
+
+        Collecting three of the same meep in a row
+        will combine them into a stronger meep.
+
+
+        Survive long enough to
+        face the stage''s boss.
+
+
+        Once you kill the boss, head North to move
+        on to the next stage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 916.52423
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 588.7286
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907080719363601862, guid: 68994f194a86756918f232234f9485b8, type: 3}
+      propertyPath: m_Name
+      value: Tutorial
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68994f194a86756918f232234f9485b8, type: 3}
 --- !u!1001 &2089916219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1788,63 +1861,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b495c2e44142f0d4eb27766c53739ef5, type: 3}
---- !u!1001 &5712954937598039813
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 957.33215
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 534.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6644147003437565059, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7907080719363601862, guid: 68994f194a86756918f232234f9485b8, type: 3}
-      propertyPath: m_Name
-      value: Tutorial
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68994f194a86756918f232234f9485b8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1867,4 +1883,4 @@ SceneRoots:
   - {fileID: 1201027195}
   - {fileID: 726307217}
   - {fileID: 284073178}
-  - {fileID: 5712954937598039813}
+  - {fileID: 1984314546}
