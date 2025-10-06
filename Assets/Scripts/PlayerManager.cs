@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerType Type = PlayerType.Hippo;
 
     public Sprite[] PlayerSprites;
+    public Skill[] PlayerSkills;
 
     public float AreaOfEffectEffector = 0;
     public float CooldownEffector = 0;
@@ -27,12 +28,15 @@ public class PlayerManager : MonoBehaviour
         {
             case PlayerType.Hippo:
                 spriteRenderer.sprite = PlayerSprites[0];
+                GetComponent<MeepAttack>().SetSkill(PlayerSkills[0]);
                 break;
             case PlayerType.Cheese:
                 spriteRenderer.sprite = PlayerSprites[1];
+                GetComponent<MeepAttack>().SetSkill(PlayerSkills[1]);
                 break;
             case PlayerType.Rat:
                 spriteRenderer.sprite = PlayerSprites[2];
+                GetComponent<MeepAttack>().SetSkill(PlayerSkills[2]);
                 break;
         }
     }

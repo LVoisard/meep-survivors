@@ -3096,7 +3096,7 @@ PrefabInstance:
       objectReference: {fileID: 1768528959}
     - target: {fileID: 3077017740733486971, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
       propertyPath: bossCountdown
-      value: 20
+      value: 197
       objectReference: {fileID: 0}
     - target: {fileID: 4411851830569147444, guid: e6c2c8949a6e109449a96dc899aa7350, type: 3}
       propertyPath: nextLevel

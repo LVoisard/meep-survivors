@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lootbox
   rotateSpeed: 200
-  zoomSpeed: 1
+  zoomSpeed: 2
   maxScale: 10
   LootBoxSound: {fileID: 2465276352117730667}
 --- !u!82 &2465276352117730667
