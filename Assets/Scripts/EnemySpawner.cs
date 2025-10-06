@@ -22,6 +22,8 @@ public class EnemySpawner : MonoBehaviour
 
     float stageDuration = 0;
 
+    Level lvl;
+
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class EnemySpawner : MonoBehaviour
         {
             audio.volume = 0f;
         }
+
+        lvl = GetComponent<Level>();
 
         Helper.Wait(bossCountdown, () =>
         {
@@ -40,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 audio.volume = 0f;
             }
             bossAudio.volume = 0.2f;
+
         });
     }
 
@@ -85,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnCooldownReady = false;
         //Debug.Log(1 + (int)stageDuration / 30);
-        for (int i = 0; i < 1 + (int)stageDuration / 30; i++)
+        for (int i = 0; i < 1 + (lvl.level - 1 * 5) + (int)stageDuration / 30; i++)
         {
             SpawnEnemy();
         }

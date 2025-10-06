@@ -9,7 +9,7 @@ public class Level : MonoBehaviour
 
     [SerializeField] private bool final = false;
     public UnityEvent levelFinished = new();
-    [SerializeField] private int level = 1;
+    [SerializeField] public int level = 1;
     [SerializeField] private AudioSource LevelTheme;
 
     private void Start()
