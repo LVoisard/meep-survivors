@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnCooldown;
     [SerializeField] private int spawnAmount;
     [SerializeField] private int bossCountdown = 180;
+    [SerializeField] private AudioSource bossAudio;
 
     private bool spawnCooldownReady = true;
     private bool miniBossSpawnCooldownReady = true;
@@ -27,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
             Enemy go = Instantiate(bossPrefab);
             go.SetAsBoss(GetComponent<Level>());
             go.transform.position = arenaSprite.transform.position = arenaSprite.bounds.center;
+            bossAudio.volume = 0.2f;
         });
     }
 
