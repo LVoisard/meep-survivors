@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed = 5;
     [SerializeField] protected float bodydamage = 1f;
     public bool rooted = false;
-    private bool isMiniboss;
+    private int meepDropCount;
+    private bool isMiniboss = false;
+    private bool isBoss = false;
 
     private void Awake()
     {
@@ -51,6 +53,12 @@ public class Enemy : MonoBehaviour
         transform.localScale = 2 * Vector2.one;
     }
 
+    public void SetAsBoss(Level level)
+    {
+        isBoss = true;
+        GetComponent<Health>().onDied.AddListener(level.Complete);
+    }
+
     private void OnEnemyDead()
     {
         if (isMiniboss)
@@ -63,6 +71,10 @@ public class Enemy : MonoBehaviour
 
         if (EnemiesDead % EnemiesBetweenMeeps == 0)
         {
+            meepDropCount++;
+            EnemiesDead = 0;
+            EnemiesBetweenMeeps += 10;
+            Debug.Log(EnemiesBetweenMeeps);
             Instantiate(DataManager.Instance.MeepPickupPrefab, transform.position, DataManager.Instance.MeepPickupPrefab.transform.rotation);
         }
     }

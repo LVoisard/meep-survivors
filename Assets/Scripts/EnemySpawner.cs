@@ -25,13 +25,9 @@ public class EnemySpawner : MonoBehaviour
         Helper.Wait(bossCountdown, () =>
         {
             Enemy go = Instantiate(bossPrefab);
-            go.GetComponent<Health>().onDied.AddListener(GetComponent<Level>().Complete);
+            go.SetAsBoss(GetComponent<Level>());
+            go.transform.position = arenaSprite.transform.position = arenaSprite.bounds.center;
         });
-    }
-
-    public void Clear()
-    {
-
     }
 
     // Update is called once per frame
@@ -84,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
         float xPos = side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.x, arenaSprite.bounds.extents.x) : mult * arenaSprite.bounds.extents.x;
         float yPos = !side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.y, arenaSprite.bounds.extents.y) : mult * arenaSprite.bounds.extents.y;
         int index = SpawnTable();
-        return Instantiate(enemyPrefabs[index], new Vector3(xPos, yPos, 0), enemyPrefabs[index].transform.rotation, enemyContainer.transform);
+        return Instantiate(enemyPrefabs[index], arenaSprite.transform.position + new Vector3(xPos, yPos, 0), enemyPrefabs[index].transform.rotation, enemyContainer.transform);
     }
 
     private int SpawnTable()

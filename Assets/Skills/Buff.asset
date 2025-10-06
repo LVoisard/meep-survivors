@@ -15,4 +15,5 @@ MonoBehaviour:
   targetCount: 1
   ready: 1
   boostAmount: 1
-  cooldown: 1
+  cooldown: 3
+  duration: 1.5

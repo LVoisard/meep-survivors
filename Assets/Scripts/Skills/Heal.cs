@@ -16,7 +16,7 @@ public class Heal : Skill
 
     private void HealTargets()
     {
-        var targets = FindTargets<BaseMeep>(owner.transform.position);
+        var targets = FindTargets<PlayerManager>(owner.transform.position);
         foreach (var targ in targets)
         {
             // TODO ADD VFX
