@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
             meepDropCount++;
             EnemiesDead = 0;
             EnemiesBetweenMeeps += 10;
+            Debug.Log(EnemiesDead);
             Debug.Log(EnemiesBetweenMeeps);
             Instantiate(DataManager.Instance.MeepPickupPrefab, transform.position, DataManager.Instance.MeepPickupPrefab.transform.rotation);
         }
