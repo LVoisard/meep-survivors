@@ -64,6 +64,19 @@ public class MeepAttack : MonoBehaviour
         if (skillCopy.Ready())
         {
             skillCopy.Perform();
+
+            if (skillCopy.OnPerform)
+            {
+                AudioSource source = GetComponent<AudioSource>();
+
+                if (!source)
+                {
+                    gameObject.AddComponent<AudioSource>();
+                    source = GetComponent<AudioSource>();
+                }
+
+                source.PlayOneShot(skillCopy.OnPerform);
+            }
         }
     }
 

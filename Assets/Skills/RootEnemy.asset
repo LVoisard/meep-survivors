@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RootAttack
   targetCount: 1
   ready: 1
+  OnPerform: {fileID: 8300000, guid: 242adb019b80ea641857b032fd976e65, type: 3}
   duration: 2
   cooldown: 1
   damage: 3
