@@ -205,6 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e813a42fcd78d3c3b11f12036c4ae25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
-  shotPrefab: {fileID: -660805927475677602, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
+  shotPrefab: {fileID: -660805927475677602, guid: 8f9fbc4a04ab6aea09f2570b26600001, type: 3}
   damage: 2
   cooldown: 8

@@ -171,7 +171,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 800}
+  m_SizeDelta: {x: 1250, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8997170743763767144
 CanvasRenderer:
@@ -203,10 +203,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Collect Meeps
 
+
     Collecting three of the same meep in a row will combine
     them into a stronger meep.
 
     Survive long enough to face the stage''s boss.
+
 
     Once
     you kill the boss, head North to move on to the next stage.'

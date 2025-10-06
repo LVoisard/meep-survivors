@@ -89,8 +89,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemies()
     {
         spawnCooldownReady = false;
-        //Debug.Log(1 + (int)stageDuration / 30);
-        for (int i = 0; i < 1 + (lvl.level - 1 * 5) + (int)stageDuration / 30; i++)
+        for (int i = 0; i < 1 + ((lvl.level - 1) * 5) + (int)stageDuration / 30; i++)
         {
             SpawnEnemy();
         }
