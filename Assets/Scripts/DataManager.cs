@@ -25,6 +25,15 @@ public class DataManager : MonoBehaviour
         });
     }
 
+    void Start()
+    {
+        stages[2].levelFinished.AddListener(() =>
+        {
+            Reset();
+            SceneManager.LoadScene("Win");
+        });
+    }
+
     public GameObject LootboxPrefab;
     public GameObject MeepPickupPrefab;
     public GameObject MeepPrefab;
@@ -35,6 +44,9 @@ public class DataManager : MonoBehaviour
 
     public Sprite[] LootboxDropUI;
     public string[] LootboxDropTitles;
+
+    private int currentStage = 0;
+    [SerializeField] private Level[] stages;
 
     private void Reset()
     {
