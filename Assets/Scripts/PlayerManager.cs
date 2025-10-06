@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public int TargetCountEffector = 0;
 
     public enum PlayerType
-    { 
+    {
         Hippo,
         Cheese,
         Rat
@@ -40,6 +40,6 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

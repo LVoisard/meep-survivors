@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     PlayerMovement playerEntity;
     Rigidbody2D rigidbody2D;
     [SerializeField] protected float speed = 5;
+    [SerializeField] protected float bodydamage = 1f;
     public bool rooted = false;
     private bool isMiniboss;
 
@@ -63,6 +64,14 @@ public class Enemy : MonoBehaviour
         if (EnemiesDead % EnemiesBetweenMeeps == 0)
         {
             Instantiate(DataManager.Instance.MeepPickupPrefab, transform.position, DataManager.Instance.MeepPickupPrefab.transform.rotation);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            collision.collider.GetComponent<Health>().TakeDamage(bodydamage);
         }
     }
 }

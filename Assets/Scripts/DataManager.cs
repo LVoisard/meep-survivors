@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class DataManager : MonoBehaviour
         // Otherwise, set and persist
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        FindFirstObjectByType<PlayerManager>().GetComponent<Health>().onDied.AddListener(() =>
+        {
+            Reset();
+            SceneManager.LoadScene("MainMenu");
+        });
     }
 
     public GameObject LootboxPrefab;
@@ -28,4 +35,10 @@ public class DataManager : MonoBehaviour
 
     public Sprite[] LootboxDropUI;
     public string[] LootboxDropTitles;
+
+    private void Reset()
+    {
+        Instance = null;
+        Destroy(gameObject);
+    }
 }
