@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnGameLaunched()
@@ -41,6 +41,11 @@ public class MainMenu : MonoBehaviour
         Panel.SetActive(false);
         PlayerManager.Type = PlayerManager.PlayerType.Rat;
         SceneManager.LoadScene("MainGame");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }
