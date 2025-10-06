@@ -512,7 +512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chungus Khan
+  m_text: The House
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46366d126c65fd24e9654b4baee7d032, type: 2}
   m_sharedMaterial: {fileID: 1624660389188085108, guid: 46366d126c65fd24e9654b4baee7d032, type: 2}
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 1
+  maxHealth: 250
   spriteRenderer: {fileID: 5997507363987407280}
   onDied:
     m_PersistentCalls:

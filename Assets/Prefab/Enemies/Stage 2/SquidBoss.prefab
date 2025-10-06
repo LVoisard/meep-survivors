@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
+  maxHealth: 500
   spriteRenderer: {fileID: 7664698384739780378}
   onDied:
     m_PersistentCalls:

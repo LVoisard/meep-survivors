@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BounceAttack
   targetCount: 1
   ready: 0
-  OnPerform: {fileID: 8300000, guid: 3b0886b0547b8414cb7fb1c2aea3794d, type: 3}
+  OnPerform: {fileID: 8300000, guid: c01c8c63e3b262f4495e725eb5c29a1c, type: 3}
   radius: 3
   damage: 5
   particles: {fileID: 8139408232428682728, guid: bff1e9b47f72786e9b882ee7618b816e, type: 3}

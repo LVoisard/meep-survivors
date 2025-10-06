@@ -179,13 +179,14 @@ GameObject:
   - component: {fileID: 6107990680434087300}
   - component: {fileID: 3893750517825857798}
   - component: {fileID: 303425796743623}
+  - component: {fileID: 1718140929176591633}
   m_Layer: 0
   m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6107990680434087300
 Transform:
   m_ObjectHideFlags: 0
@@ -247,6 +248,26 @@ MonoBehaviour:
   spawnAmount: 1
   bossCountdown: 5
   bossAudio: {fileID: 5586309075197679683}
+--- !u!114 &1718140929176591633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847663153486670410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22b3cba652ba6f62986680dd1b9a970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Level
+  blocker: {fileID: 0}
+  portal: {fileID: 0}
+  nextLevel: {fileID: 0}
+  final: 1
+  levelFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  level: 1
 --- !u!1 &2427697894219795037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1647,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1b88476512b652748ba94c9b97da8157, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1638,9 +1659,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2142,7 +2163,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 233aa8ee34462704a9c8bab2c7a9c297, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2154,9 +2175,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
