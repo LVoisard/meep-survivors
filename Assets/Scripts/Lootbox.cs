@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +27,7 @@ public class Lootbox : MonoBehaviour
             initialScale = transform.localScale;
             targetCamera = Camera.main;
             animating = true;
-
+            Time.timeScale = 0f;
         }
     }
 
@@ -33,8 +35,8 @@ public class Lootbox : MonoBehaviour
     {
         if (!animating) return;
 
-        transform.Rotate(0,0, Time.deltaTime * rotateSpeed);
-        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * maxScale, Time.deltaTime * zoomSpeed);
+        transform.Rotate(0,0, Time.unscaledDeltaTime * rotateSpeed);
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * maxScale, Time.unscaledDeltaTime * zoomSpeed);
         if (transform.localScale.x >= maxScale * 0.95f)
         {
             animating = false;
@@ -43,17 +45,46 @@ public class Lootbox : MonoBehaviour
             Button[] buttons = canvas.GetComponentsInChildren<Button>();
             TMPro.TMP_Text[] texts = canvas.GetComponentsInChildren<TMPro.TMP_Text>();
 
-            for (int i = 0; i < buttons.Length; i++)
+            List<int> indices = Enumerable.Range(0, DataManager.Instance.LootboxDropUI.Length).ToList();
+            var randomIndices = indices.OrderBy(i => Random.value).Take(3).ToList();
+
+            for (int i = 0; i < 3; i++)
             {
-                buttons[i].onClick.AddListener(ButtonClicked);
-                texts[i].text = "joe " + i;
-            }  
+                buttons[i].onClick.AddListener(() => ButtonClicked(indices[i]));
+                texts[i].text = DataManager.Instance.LootboxDropTitles[indices[i]];
+                buttons[i].GetComponentsInChildren<Image>()[1].sprite = DataManager.Instance.LootboxDropUI[indices[i]];
+            }
         }
     }
 
-    void ButtonClicked()
+    void ButtonClicked(int index)
     {
         canvas.enabled = false;
+
+        PlayerManager player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        Time.timeScale = 1f;
+        switch (index)
+        {
+            case 0:
+                player.AreaOfEffectEffector += 100;
+                break;
+            case 1:
+                player.CooldownEffector += 100;
+                break;
+            case 2:
+                player.DamageEffector += 100;
+                break;
+            case 3:
+                player.DurationEffector += 100;
+                break;
+            case 4:
+                player.SpeedEffector += 100;
+                break;
+            case 5:
+                player.TargetCountEffector += 1;
+                break;
+        }
+
         Destroy(gameObject);
     }
 }

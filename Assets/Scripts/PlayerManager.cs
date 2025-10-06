@@ -6,6 +6,13 @@ public class PlayerManager : MonoBehaviour
 
     public Sprite[] PlayerSprites;
 
+    public float AreaOfEffectEffector = 0;
+    public float CooldownEffector = 0;
+    public float DamageEffector = 0;
+    public float DurationEffector = 0;
+    public float SpeedEffector = 0;
+    public int TargetCountEffector = 0;
+
     public enum PlayerType
     { 
         Hippo,

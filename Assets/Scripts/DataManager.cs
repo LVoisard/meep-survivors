@@ -25,4 +25,7 @@ public class DataManager : MonoBehaviour
     public Sprite[] MeepSpriteMap;
 
     public Skill[] Skills;
+
+    public Sprite[] LootboxDropUI;
+    public string[] LootboxDropTitles;
 }

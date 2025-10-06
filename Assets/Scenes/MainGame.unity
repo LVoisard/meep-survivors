@@ -3022,6 +3022,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 521659b5b263ed218a1c97382ab909f7, type: 2}
   - {fileID: 11400000, guid: 521659b5b263ed218a1c97382ab909f7, type: 2}
   - {fileID: 11400000, guid: ff8f18f47d1882ddf8be9d4a0b78e177, type: 2}
+  LootboxDropUI:
+  - {fileID: 21300000, guid: 2af08fe56a903364794a5efc7253a389, type: 3}
+  - {fileID: 21300000, guid: 3ddad6a77d90ffe41b5229011eee094e, type: 3}
+  - {fileID: 21300000, guid: 484310e26f8396c4bbe4061c22b1a118, type: 3}
+  - {fileID: 21300000, guid: 40fbaa0dfb6826046a25091c612e3f50, type: 3}
+  - {fileID: 21300000, guid: 9be30224d5e060d4394c33fb7c5fb2dd, type: 3}
+  - {fileID: 21300000, guid: 60319154183ed84358652820dd4a5cbd, type: 3}
+  LootboxDropTitles:
+  - Area of Effect
+  - Cooldown
+  - Damage
+  - Duration
+  - Speed
+  - Target Count
 --- !u!4 &1427790239
 Transform:
   m_ObjectHideFlags: 0
@@ -3681,6 +3695,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 823c2f90517f50c43a703ec9b56a5f14, type: 3}
   - {fileID: 21300000, guid: c0bb332c4e3221347ad11c000dd613d1, type: 3}
   - {fileID: 21300000, guid: 7c9137ab07aa05e4db5da2f983d8c6e7, type: 3}
+  AreaOfEffectEffector: 0
+  CooldownEffector: 0
+  DamageEffector: 0
+  DurationEffector: 0
+  SpeedEffector: 0
+  TargetCountEffector: 0
 --- !u!1001 &1796558935
 PrefabInstance:
   m_ObjectHideFlags: 0

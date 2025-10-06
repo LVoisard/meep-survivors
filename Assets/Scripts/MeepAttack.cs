@@ -44,12 +44,15 @@ public class MeepAttack : MonoBehaviour
     public void UpdateSkillEffectors()
     {
         Skill.SkillEffectors eff;
-        eff.AreaOfEffect = aoe.value;
-        eff.CooldownReduction = cdr.value;
-        eff.Damage = dmg.value;
-        eff.Duration = dur.value;
-        eff.Speed = speed.value;
-        eff.AdditionalTargets = target.value;
+
+        PlayerManager player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+
+        eff.AreaOfEffect = aoe.value + player.AreaOfEffectEffector;
+        eff.CooldownReduction = cdr.value + player.CooldownEffector;
+        eff.Damage = dmg.value + player.DamageEffector;
+        eff.Duration = dur.value + player.DurationEffector;
+        eff.Speed = speed.value + player.SpeedEffector;
+        eff.AdditionalTargets = target.value + player.TargetCountEffector;
 
         skillCopy.ApplyEffectors(eff);
     }
