@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightingStikeSkill
   targetCount: 1
   ready: 1
+  OnPerform: {fileID: 8300000, guid: e68b764edd54ea64aaba9ca6b446a5b0, type: 3}
   damage: 5
   cooldown: 0.2

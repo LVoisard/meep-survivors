@@ -7,6 +7,8 @@ public abstract class Skill : ScriptableObject
     [SerializeField] protected int targetCount = 1;
     [SerializeField] protected bool ready = true;
 
+    public AudioClip OnPerform;
+
     protected SkillEffectors effectors;
     protected GameObject owner;
 

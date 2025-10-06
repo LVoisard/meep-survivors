@@ -6,6 +6,8 @@ public class MeepPickup : MonoBehaviour
 
     [SerializeField] BaseMeep.MeepType MeepType;
 
+    [SerializeField] AudioSource MeepPickupAudio;
+
     private void Start()
     {
         MeepType = GetRandomEnumValue<BaseMeep.MeepType>();
@@ -24,6 +26,8 @@ public class MeepPickup : MonoBehaviour
 
     void OnPickup()
     {
+        MeepPickupAudio.Play();
+
         Transform train = GameObject.FindGameObjectWithTag("PlayerTrain").transform;
         GameObject newMeep = Instantiate(DataManager.Instance.MeepPrefab, train);
 

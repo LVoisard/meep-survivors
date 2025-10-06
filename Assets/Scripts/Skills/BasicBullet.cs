@@ -8,7 +8,8 @@ public class BasicBullet : MonoBehaviour
     [SerializeField] private float lifetime = 5f;
     private float damage;
     private string targetTag;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] private AudioSource OnHit;
 
     private Skill.SkillEffectors effectors;
     public void SetStats(string targetTag, float dmg, Skill.SkillEffectors eff)
@@ -33,6 +34,8 @@ public class BasicBullet : MonoBehaviour
     {
         if (collision.tag == targetTag)
         {
+            OnHit.Play();
+
             var pierce = GetComponent<Pierce>();
             var chain = GetComponent<Chain>();
             if (pierce != null)

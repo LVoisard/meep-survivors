@@ -8,6 +8,7 @@ public class TrainManager : MonoBehaviour
     [SerializeField] GameObject MeepPrefab;
     [SerializeField] float cameraGoUp = 0.1f;
     [SerializeField] float maxCameraGoUp = 3;
+    [SerializeField] AudioSource LevelupSound;
     public UnityEvent<BaseMeep> onMeepTierUp = new UnityEvent<BaseMeep>();
 
     private int childCount = 0;
@@ -67,6 +68,7 @@ public class TrainManager : MonoBehaviour
     {
         BaseMeep baseMeep = meeps[0];
         baseMeep.SetLevel(meeps[0].GetLevel() + 1);
+        LevelupSound.Play();
 
 
         for (int i = 1; i < 3; i++)

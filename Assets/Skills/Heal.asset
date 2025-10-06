@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Heal
   targetCount: 1
   ready: 1
+  OnPerform: {fileID: 8300000, guid: fdde98249e97de14d952f5d9b7ef6f4e, type: 3}
   healAmount: 1
   cooldown: 1

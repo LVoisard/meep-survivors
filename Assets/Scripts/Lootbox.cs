@@ -15,6 +15,8 @@ public class Lootbox : MonoBehaviour
     private Camera targetCamera;
     private Canvas canvas;
 
+    [SerializeField] AudioSource LootBoxSound;
+
     private void Awake()
     {
         canvas = GameObject.FindWithTag("SelectionCanvas").GetComponent<Canvas>();
@@ -28,6 +30,7 @@ public class Lootbox : MonoBehaviour
             targetCamera = Camera.main;
             animating = true;
             Time.timeScale = 0f;
+            LootBoxSound.Play();
         }
     }
 

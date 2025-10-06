@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piercing Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 3553740563030891486, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f5fe3fa204c6fa34c928322ef9d51044, type: 3}
     - target: {fileID: 3636273230442478232, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7002670889156007763, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: cfe48ad22ba4dc64a8297bf030431e71, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
