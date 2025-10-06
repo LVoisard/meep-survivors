@@ -6,12 +6,36 @@ using UnityEngine.Events;
 public class TrainManager : MonoBehaviour
 {
     [SerializeField] GameObject MeepPrefab;
-
+    [SerializeField] float cameraGoUp = 0.1f;
+    [SerializeField] float maxCameraGoUp = 3;
     public UnityEvent<BaseMeep> onMeepTierUp = new UnityEvent<BaseMeep>();
 
+    private int childCount = 0;
+    private Vector3 targetPos;
+
+    void Start()
+    {
+        targetPos = Camera.main.transform.localPosition;
+    }
     public void OnMeepAdded(BaseMeep meep)
     {
         AnalyzeChildren();
+
+    }
+
+    void LateUpdate()
+    {
+        float distance = Mathf.Min(cameraGoUp * childCount, maxCameraGoUp);
+
+        // Target position is base position minus forward * distance
+        Vector3 desiredPos = targetPos - Camera.main.transform.forward * distance;
+
+        // Smoothly interpolate toward the desired position
+        Camera.main.transform.localPosition = Vector3.Lerp(
+            Camera.main.transform.localPosition,
+            desiredPos,
+            Time.deltaTime
+        );
     }
 
     void AnalyzeChildren()
@@ -34,6 +58,9 @@ public class TrainManager : MonoBehaviour
                 count = 1;
             }
         }
+
+        childCount = GetComponentsInChildren<BaseMeep>().Length;
+
     }
 
     void CompressConsecutiveMeeps(List<BaseMeep> meeps, int index)

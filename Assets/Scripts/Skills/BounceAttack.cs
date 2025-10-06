@@ -25,8 +25,14 @@ public class BounceAttack : Skill
     public override void Perform()
     {
         ready = false;
+
         partSys.Play();
         Helper.Wait(0.1f, DealDamageInRadius);
+        for (int i = 1; i < targetCount + effectors.AdditionalTargets; i++)
+        {
+            Helper.Wait(0.1f * i + 0.1f, () => { partSys.Play(); });
+            Helper.Wait(0.2f * i + 0.2f, DealDamageInRadius);
+        }
     }
 
     public override void ApplyEffectors(SkillEffectors effectors)

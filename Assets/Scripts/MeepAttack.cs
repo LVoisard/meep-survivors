@@ -21,6 +21,8 @@ public class MeepAttack : MonoBehaviour
 
     private Skill skillCopy;
 
+    public Skill GetSkill() { return skillCopy; }
+
     private void Awake()
     {
         aoe = GetComponent<AreaOfEffectEffector>();

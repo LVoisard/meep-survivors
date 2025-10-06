@@ -4,22 +4,18 @@ using UnityEngine.UI;
 
 public class TierUpHealerOne : TierUpBase
 {
-    [SerializeField] private Skill knockback;
-    [SerializeField] private Skill linger;
-
-
+    [SerializeField] private Skill buff;
     void Awake()
     {
         btn1.onClick.AddListener(() =>
         {
-            //var att = currentMeep.AddComponent<MeepAttack>();
-            //att.SetSkill(knockback);
+            currentMeep.GetComponent<TargetCountEffector>().AddToVal(2);
         });
 
         btn2.onClick.AddListener(() =>
         {
-            //var att = currentMeep.AddComponent<MeepAttack>();
-            //att.SetSkill(linger);
+            var att = currentMeep.AddComponent<MeepAttack>();
+            att.SetSkill(buff);
         });
     }
 

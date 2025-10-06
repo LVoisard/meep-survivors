@@ -23,6 +23,7 @@ public class SharkFinProjectile : MonoBehaviour
 
         float rad = angle * Mathf.Deg2Rad;
         Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius * (1f + effectors.AreaOfEffect / 100f);
+        if (transform == null) return;
         transform.position = center.position + offset;
     }
 

@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
   skill: {fileID: 11400000, guid: ff8f18f47d1882ddf8be9d4a0b78e177, type: 2}
+  SetupAttackOnAwake: 1
 --- !u!114 &1004962431447881614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b5f054140c9e45b7bdfc9aa8294cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 150
+  maxHealth: 1000
   spriteRenderer: {fileID: 5997507363987407280}
   onDied:
     m_PersistentCalls:

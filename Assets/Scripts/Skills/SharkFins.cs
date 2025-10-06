@@ -10,15 +10,19 @@ public class SharkFins : Skill
     public override void Perform()
     {
         var pos = owner.transform.position;
-        foreach (var target in FindTargets<Enemy>(pos))
+        for (int i = 0; i < targetCount + effectors.AdditionalTargets; i++)
         {
-            Vector3 ab = target.position - pos;
-            Vector3 dir = ab.normalized;
-            SharkFinProjectile projInst = Instantiate(projectile);
-            projInst.transform.position = pos + dir;
-            projInst.transform.forward = dir;
-            projInst.SetStats(dmg, effectors);
-            projInst.SetTranformCenter(owner.transform);
+            int ind = i;
+            Helper.Wait(0.1f * ind, () =>
+            {
+                Vector3 dir = Vector3.up;
+                SharkFinProjectile projInst = Instantiate(projectile);
+                projInst.transform.position = pos + dir;
+                projInst.transform.forward = dir;
+                projInst.SetStats(dmg, effectors);
+                projInst.SetTranformCenter(owner.transform);
+            });
+
         }
 
         ready = false;

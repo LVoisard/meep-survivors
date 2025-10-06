@@ -51,10 +51,7 @@ public class Lootbox : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 int ind = i;
-                buttons[ind].onClick.AddListener(() =>
-                {
-                    ButtonClicked(randomIndices[ind]);
-                });
+                buttons[ind].onClick.AddListener(() => { ButtonClicked(randomIndices[ind]); });
                 texts[i].text = DataManager.Instance.LootboxDropTitles[randomIndices[i]];
                 buttons[i].GetComponentsInChildren<Image>()[1].sprite = DataManager.Instance.LootboxDropUI[randomIndices[i]];
             }
@@ -88,6 +85,13 @@ public class Lootbox : MonoBehaviour
                 player.TargetCountEffector += 1;
                 break;
         }
+
+        var attks = FindObjectsByType<MeepAttack>(FindObjectsSortMode.None);
+        foreach (var att in attks)
+        {
+            att.UpdateSkillEffectors();
+        }
+
 
         Destroy(transform.gameObject);
     }

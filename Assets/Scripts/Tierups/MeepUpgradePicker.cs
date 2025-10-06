@@ -3,12 +3,6 @@ using UnityEngine;
 public class MeepUpgradePicker : MonoBehaviour
 {
 
-    [Header("Sorcerer Tier 1")]
-    [SerializeField] private Skill lightning;
-    [SerializeField] private Skill explode;
-    [SerializeField] private Skill root;
-
-
     public void LevelUpMeep(BaseMeep meep)
     {
         var menus = GetComponentsInChildren<TierUpBase>(true);

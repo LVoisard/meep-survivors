@@ -86,13 +86,13 @@ public class EnemySpawner : MonoBehaviour
         int val = UnityEngine.Random.Range(0 + (int)stageDuration / 30, 100);
         switch (val)
         {
-            case < 30:
-                return 0;
             case < 50:
+                return 0;
+            case < 58:
                 return 1;
-            case < 70:
+            case < 68:
                 return 2;
-            case < 85:
+            case < 83:
                 return 3;
             case < 95:
                 return 4;

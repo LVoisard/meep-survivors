@@ -8,14 +8,12 @@ public class TierUpHealerTwo : TierUpBase
     {
         btn1.onClick.AddListener(() =>
         {
-            //var aoe = currentMeep.GetComponent<AreaOfEffectEffector>();
-            //aoe.AddToVal(50);
+            currentMeep.GetComponent<TargetCountEffector>().AddToVal(2);
         });
 
         btn2.onClick.AddListener(() =>
         {
-            //var ct = currentMeep.GetComponent<TargetCountEffector>();
-            //ct.AddToVal(2);
+            currentMeep.GetComponent<DamageEffector>().AddToVal(200);
         });
     }
 
