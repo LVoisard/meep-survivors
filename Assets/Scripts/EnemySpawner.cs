@@ -25,11 +25,20 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        foreach (AudioSource audio in bossAudio.transform.parent.GetComponentsInChildren<AudioSource>())
+        {
+            audio.volume = 0f;
+        }
+
         Helper.Wait(bossCountdown, () =>
         {
             Enemy go = Instantiate(bossPrefab);
             go.SetAsBoss(GetComponent<Level>());
             go.transform.position = arenaSprite.transform.position = arenaSprite.bounds.center;
+            foreach (AudioSource audio in bossAudio.transform.parent.GetComponentsInChildren<AudioSource>())
+            {
+                audio.volume = 0f;
+            }
             bossAudio.volume = 0.2f;
         });
     }

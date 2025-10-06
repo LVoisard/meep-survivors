@@ -40,6 +40,7 @@ public class DataManager : MonoBehaviour
 
     public Sprite[] MeepSpriteMap;
     public Sprite[] UpgradedMeepSpriteMap;
+    public Sprite[] MegaUpgradedMeepSpriteMap;
 
     public Skill[] Skills;
 
