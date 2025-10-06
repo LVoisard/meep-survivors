@@ -40,7 +40,7 @@ public class Lootbox : MonoBehaviour
             animating = false;
             canvas.enabled = true;
 
-                        Button[] buttons = canvas.GetComponentsInChildren<Button>();
+            Button[] buttons = canvas.GetComponentsInChildren<Button>();
             TMPro.TMP_Text[] texts = canvas.GetComponentsInChildren<TMPro.TMP_Text>();
 
             for (int i = 0; i < buttons.Length; i++)
@@ -50,7 +50,6 @@ public class Lootbox : MonoBehaviour
             }  
         }
     }
-
 
     void ButtonClicked()
     {

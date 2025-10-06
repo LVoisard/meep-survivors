@@ -9,11 +9,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy bossPrefab;
     [SerializeField] private GameObject enemyContainer;
 
+    [SerializeField] private float minibossCooldown;
     [SerializeField] private float spawnCooldown;
     [SerializeField] private int spawnAmount;
     [SerializeField] private int bossCountdown = 180;
 
     private bool spawnCooldownReady = true;
+    private bool miniBossSpawnCooldownReady = true;
 
     float stageDuration = 0;
 
@@ -34,7 +36,24 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemies();
         }
 
+        if (miniBossSpawnCooldownReady)
+        {
+            SpawnMiniBoss();
+        }
+
         stageDuration += Time.deltaTime;
+    }
+
+    private void SpawnMiniBoss()
+    {
+        miniBossSpawnCooldownReady = false;
+        Enemy miniBoss = SpawnEnemy();
+        miniBoss.SetAsMiniboss();
+
+        Helper.Wait(minibossCooldown, () =>
+        {
+            miniBossSpawnCooldownReady = true;
+        });
     }
 
     void SpawnEnemies()
@@ -43,21 +62,23 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log(1 + (int)stageDuration / 30);
         for (int i = 0; i < 1 + (int)stageDuration / 30; i++)
         {
-            bool side = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
-
-            float mult = (UnityEngine.Random.Range(0, 2) - 0.5f) * 2;
-
-            float xPos = side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.x, arenaSprite.bounds.extents.x) : mult * arenaSprite.bounds.extents.x;
-            float yPos = !side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.y, arenaSprite.bounds.extents.y) : mult * arenaSprite.bounds.extents.y;
-
-            int index = SpawnTable();
-            Enemy go = Instantiate(enemyPrefabs[index], new Vector3(xPos, yPos, 0), enemyPrefabs[index].transform.rotation, enemyContainer.transform);
+            SpawnEnemy();
         }
 
         Helper.Wait(spawnCooldown, () =>
         {
             spawnCooldownReady = true;
         });
+    }
+
+    private Enemy SpawnEnemy()
+    {
+        bool side = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
+        float mult = (UnityEngine.Random.Range(0, 2) - 0.5f) * 2;
+        float xPos = side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.x, arenaSprite.bounds.extents.x) : mult * arenaSprite.bounds.extents.x;
+        float yPos = !side ? UnityEngine.Random.Range(-arenaSprite.bounds.extents.y, arenaSprite.bounds.extents.y) : mult * arenaSprite.bounds.extents.y;
+        int index = SpawnTable();
+        return Instantiate(enemyPrefabs[index], new Vector3(xPos, yPos, 0), enemyPrefabs[index].transform.rotation, enemyContainer.transform);
     }
 
     private int SpawnTable()

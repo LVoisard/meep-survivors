@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ff86962de5582ba8e55ac2af1430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  LootboxPrefab: {fileID: 2162003279951428263, guid: 7d0627c9879001d499171951f1497c33, type: 3}
+  MeepPickupPrefab: {fileID: 8834936734588603692, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
   speed: 0.5
   rooted: 0
 --- !u!114 &8892169557832131268

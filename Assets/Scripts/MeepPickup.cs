@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class MeepPickup : MonoBehaviour
 {
-    [SerializeField] GameObject MeepPrefab;
+    [SerializeField] SpriteRenderer MeepSprite;
+
     [SerializeField] BaseMeep.MeepType MeepType;
+
+    private void Start()
+    {
+        MeepType = GetRandomEnumValue<BaseMeep.MeepType>();
+        MeepSprite.sprite = DataManager.Instance.MeepSpriteMap[(int)MeepType];
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
             OnPickup();
+            Destroy(gameObject);
         }
     }
 
     void OnPickup()
     {
         Transform train = GameObject.FindGameObjectWithTag("PlayerTrain").transform;
-        GameObject newMeep = Instantiate(MeepPrefab, train);
+        GameObject newMeep = Instantiate(DataManager.Instance.MeepPrefab, train);
 
         newMeep.transform.localPosition = Vector3.zero;
         newMeep.transform.localScale = Vector3.one;
@@ -29,7 +38,11 @@ public class MeepPickup : MonoBehaviour
 
         TrainManager trainManager = train.GetComponent<TrainManager>();
         trainManager.OnMeepAdded(baseMeep);
+    }
 
-        Destroy(gameObject);
+    T GetRandomEnumValue<T>() where T : System.Enum
+    {
+        var values = System.Enum.GetValues(typeof(T));
+        return (T)values.GetValue(Random.Range(0, values.Length));
     }
 }

@@ -130,6 +130,13 @@ GameObject:
   - component: {fileID: 8943560715151558768}
   - component: {fileID: 3831762607925521191}
   - component: {fileID: 8449044917748751305}
+  - component: {fileID: 5984095890915339403}
+  - component: {fileID: 3687233006113243415}
+  - component: {fileID: 1171845160412367361}
+  - component: {fileID: 1770256162700344805}
+  - component: {fileID: 4804842720050123625}
+  - component: {fileID: 4287793295776519112}
+  - component: {fileID: 6540693222181391166}
   m_Layer: 0
   m_Name: Meep
   m_TagString: Untagged
@@ -165,12 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c92de0a8a59854ab80ce3d1e7d98d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseMeep
-  SpriteMap:
-  - {fileID: 21300000, guid: 3ddad6a77d90ffe41b5229011eee094e, type: 3}
-  - {fileID: 21300000, guid: 9be30224d5e060d4394c33fb7c5fb2dd, type: 3}
-  - {fileID: 21300000, guid: 484310e26f8396c4bbe4061c22b1a118, type: 3}
-  - {fileID: 21300000, guid: 2af08fe56a903364794a5efc7253a389, type: 3}
-  - {fileID: 21300000, guid: 40fbaa0dfb6826046a25091c612e3f50, type: 3}
   Type: 0
   Level: 1
 --- !u!114 &8943560715151558768
@@ -228,3 +229,98 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 0
+  spriteRenderer: {fileID: 0}
+  onDied:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5984095890915339403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
+  value: 0
+--- !u!114 &3687233006113243415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d0da7ca5a7671d0a9bf84c2a050f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CooldownEffector
+  value: 0
+--- !u!114 &1171845160412367361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
+  value: 0
+--- !u!114 &1770256162700344805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e889902f18e5b608173a2d6fe52f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DurationEffector
+  value: 0
+--- !u!114 &4804842720050123625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bccfeecee3dd899a6aa65889b2a04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedEffector
+  value: 0
+--- !u!114 &4287793295776519112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
+  value: 0
+--- !u!114 &6540693222181391166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170151976877671836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
+  skill: {fileID: 0}

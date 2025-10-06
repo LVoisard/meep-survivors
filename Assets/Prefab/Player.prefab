@@ -149,6 +149,14 @@ GameObject:
   - component: {fileID: 2002181571197459845}
   - component: {fileID: 5673956782250467786}
   - component: {fileID: 9115994585581591654}
+  - component: {fileID: 6989926228525692360}
+  - component: {fileID: 1677671545492995465}
+  - component: {fileID: 3327181902384446903}
+  - component: {fileID: 3994098862325980945}
+  - component: {fileID: 2625495740218537288}
+  - component: {fileID: 4840637373926275752}
+  - component: {fileID: 3350557374103391772}
+  - component: {fileID: 3083467619536575805}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -248,6 +256,143 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &6989926228525692360
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1677671545492995465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b2013a75def64d5bd3ccf498d448c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaOfEffectEffector
+  value: 0
+--- !u!114 &3327181902384446903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d0da7ca5a7671d0a9bf84c2a050f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CooldownEffector
+  value: 0
+--- !u!114 &3994098862325980945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53416c0ab1b3e9ea32d0ad017f4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageEffector
+  value: 0
+--- !u!114 &2625495740218537288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e889902f18e5b608173a2d6fe52f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DurationEffector
+  value: 0
+--- !u!114 &4840637373926275752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bccfeecee3dd899a6aa65889b2a04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedEffector
+  value: 0
+--- !u!114 &3350557374103391772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcc2acaffda9fdd785047d0a99b7d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetCountEffector
+  value: 0
+--- !u!114 &3083467619536575805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229549499287595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24883b14533bdf0248fb5cb03b182a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeepAttack
+  skill: {fileID: 11400000, guid: 7c315203084a1434bbcb053c0b5aa4f5, type: 2}
 --- !u!1 &5109414873802398631
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,9 +519,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5681633697944275196}
+  - component: {fileID: 6402289828597623492}
   m_Layer: 0
   m_Name: Train
-  m_TagString: Untagged
+  m_TagString: PlayerTrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,8 +537,21 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7856973095027874655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6402289828597623492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035866012808942916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b661beb78055384e91c32de80da8f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrainManager
+  MeepPrefab: {fileID: 9170151976877671836, guid: d3eac6f26bde1158fa67498bb2e0cff3, type: 3}

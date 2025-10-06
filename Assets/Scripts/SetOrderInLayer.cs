@@ -16,8 +16,18 @@ public class SetOrderInLayer : MonoBehaviour
     void Update()
     {
         if (Player.transform.position.y < Sprite.bounds.center.y)
+        {
             Sprite.sortingOrder = 0;
+            Color color = Sprite.color;
+            color.a = 1f;
+            Sprite.color = color;
+        }
         else
+        {
             Sprite.sortingOrder = 2;
+            Color color = Sprite.color;
+            color.a = 0.5f;
+            Sprite.color = color;
+        }
     }
 }

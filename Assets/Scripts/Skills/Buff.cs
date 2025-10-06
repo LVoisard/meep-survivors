@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Skills", menuName = "Skill/Buff")]
 public class Buff : Skill
 {
     [SerializeField] private float boostAmount = 1f;

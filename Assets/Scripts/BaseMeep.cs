@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class BaseMeep : MonoBehaviour
 {
-    [SerializeField] Sprite[] SpriteMap;
-    [SerializeField] private MeepType Type  = MeepType.Purple;
+    [SerializeField] private MeepType Type  = MeepType.Healer;
     [SerializeField] private int Level = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,19 +22,44 @@ public class BaseMeep : MonoBehaviour
 
     public enum MeepType
     {
-        Purple,
-        Yellow,
-        Red,
-        Blue,
-        Green
+        Healer,
+        Slasher,
+        Wizard,
+        Ranged,
+        Melee
     }
-
 
     public new MeepType GetType() { return Type; }
     public void SetType(MeepType type)
     {
         Type = type;
-        GetComponentInChildren<SpriteRenderer>().sprite = SpriteMap[(int)type];
+        GetComponentInChildren<SpriteRenderer>().sprite = DataManager.Instance.MeepSpriteMap[(int)type];
+
+        MeepAttack attack = GetComponent<MeepAttack>();
+
+        if (Level == 1)
+        {
+            switch (GetType())
+            {
+                case MeepType.Healer:
+                    attack.SetSkill(DataManager.Instance.Skills[0]);
+                    break;
+                case MeepType.Slasher:
+                    attack.SetSkill(DataManager.Instance.Skills[1]);
+                    break;
+                case MeepType.Wizard:
+                    attack.SetSkill(DataManager.Instance.Skills[2]);
+                    break;
+                case MeepType.Ranged:
+                    attack.SetSkill(DataManager.Instance.Skills[3]);
+                    break;
+                case MeepType.Melee:
+                    attack.SetSkill(DataManager.Instance.Skills[4]);
+                    break;
+            }
+
+            attack.enabled = true;
+        }
     }
 
     public int GetLevel() { return Level; }

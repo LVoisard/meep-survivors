@@ -10,13 +10,14 @@ public class MeepAttack : MonoBehaviour
 {
     [SerializeField] private Skill skill;
 
+    [SerializeField] bool SetupAttackOnAwake = false;
+
     private AreaOfEffectEffector aoe;
     private CooldownEffector cdr;
     private DamageEffector dmg;
     private DurationEffector dur;
     private SpeedEffector speed;
     private TargetCountEffector target;
-
 
     private Skill skillCopy;
 
@@ -27,8 +28,10 @@ public class MeepAttack : MonoBehaviour
         dmg = GetComponent<DamageEffector>();
         dur = GetComponent<DurationEffector>();
         speed = GetComponent<SpeedEffector>();
-        target = GetComponent<TargetCountEffector>();
-        SetupAttack(skill);
+        target = GetComponent<TargetCountEffector>();;
+
+        if (SetupAttackOnAwake)
+            SetupAttack(skill);
     }
 
     public void SetupAttack(Skill skill)
@@ -57,5 +60,11 @@ public class MeepAttack : MonoBehaviour
         {
             skillCopy.Perform();
         }
+    }
+
+    public void SetSkill(Skill s)
+    {
+        skill = s;
+        SetupAttack(skill);
     }
 }

@@ -6,18 +6,6 @@ public class TrainManager : MonoBehaviour
 {
     [SerializeField] GameObject MeepPrefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnMeepAdded(BaseMeep meep)
     {
         AnalyzeChildren();  
@@ -36,7 +24,6 @@ public class TrainManager : MonoBehaviour
                 if (count == 3)
                 {
                     CompressConsecutiveMeeps(children.GetRange(i - 2, 3), i-2);
-                    return; //trigger another check in CompressConsecutiveMeeps
                 }
             }
             else
@@ -57,14 +44,12 @@ public class TrainManager : MonoBehaviour
 
         BaseMeep baseMeep = newMeep.GetComponent<BaseMeep>();
 
-        baseMeep.SetType(meeps[0].GetType());
         baseMeep.SetLevel(meeps[0].GetLevel() + 1);
+        baseMeep.SetType(meeps[0].GetType());
 
         foreach (BaseMeep meep in meeps)
         {
             Destroy(meep.gameObject);
         }
-
-        //OnMeepAdded(baseMeep);
     }
 }
