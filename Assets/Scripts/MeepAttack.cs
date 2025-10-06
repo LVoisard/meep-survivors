@@ -28,7 +28,7 @@ public class MeepAttack : MonoBehaviour
         dmg = GetComponent<DamageEffector>();
         dur = GetComponent<DurationEffector>();
         speed = GetComponent<SpeedEffector>();
-        target = GetComponent<TargetCountEffector>();;
+        target = GetComponent<TargetCountEffector>(); ;
 
         if (SetupAttackOnAwake)
             SetupAttack(skill);

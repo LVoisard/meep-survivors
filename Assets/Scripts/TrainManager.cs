@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TrainManager : MonoBehaviour
 {
     [SerializeField] GameObject MeepPrefab;
 
+    public UnityEvent<BaseMeep> onMeepTierUp = new UnityEvent<BaseMeep>();
+
     public void OnMeepAdded(BaseMeep meep)
     {
-        AnalyzeChildren();  
+        AnalyzeChildren();
     }
 
     void AnalyzeChildren()
@@ -23,7 +26,7 @@ public class TrainManager : MonoBehaviour
                 count++;
                 if (count == 3)
                 {
-                    CompressConsecutiveMeeps(children.GetRange(i - 2, 3), i-2);
+                    CompressConsecutiveMeeps(children.GetRange(i - 2, 3), i - 2);
                 }
             }
             else
@@ -35,21 +38,15 @@ public class TrainManager : MonoBehaviour
 
     void CompressConsecutiveMeeps(List<BaseMeep> meeps, int index)
     {
-        Transform train = GameObject.FindGameObjectWithTag("PlayerTrain").transform;
-        GameObject newMeep = Instantiate(MeepPrefab, train);
-
-        newMeep.transform.localPosition = Vector3.zero;
-        newMeep.transform.localScale = Vector3.one;
-        newMeep.transform.localRotation = Quaternion.identity;
-
-        BaseMeep baseMeep = newMeep.GetComponent<BaseMeep>();
-
+        BaseMeep baseMeep = meeps[0];
         baseMeep.SetLevel(meeps[0].GetLevel() + 1);
-        baseMeep.SetType(meeps[0].GetType());
 
-        foreach (BaseMeep meep in meeps)
+
+        for (int i = 1; i < 3; i++)
         {
-            Destroy(meep.gameObject);
+            Destroy(meeps[i].gameObject);
         }
+
+        onMeepTierUp?.Invoke(baseMeep);
     }
 }

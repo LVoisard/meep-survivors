@@ -35,7 +35,7 @@ public class Lootbox : MonoBehaviour
     {
         if (!animating) return;
 
-        transform.Rotate(0,0, Time.unscaledDeltaTime * rotateSpeed);
+        transform.Rotate(0, 0, Time.unscaledDeltaTime * rotateSpeed);
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * maxScale, Time.unscaledDeltaTime * zoomSpeed);
         if (transform.localScale.x >= maxScale * 0.95f)
         {
@@ -50,9 +50,13 @@ public class Lootbox : MonoBehaviour
 
             for (int i = 0; i < 3; i++)
             {
-                buttons[i].onClick.AddListener(() => ButtonClicked(indices[i]));
-                texts[i].text = DataManager.Instance.LootboxDropTitles[indices[i]];
-                buttons[i].GetComponentsInChildren<Image>()[1].sprite = DataManager.Instance.LootboxDropUI[indices[i]];
+                int ind = i;
+                buttons[ind].onClick.AddListener(() =>
+                {
+                    ButtonClicked(randomIndices[ind]);
+                });
+                texts[i].text = DataManager.Instance.LootboxDropTitles[randomIndices[i]];
+                buttons[i].GetComponentsInChildren<Image>()[1].sprite = DataManager.Instance.LootboxDropUI[randomIndices[i]];
             }
         }
     }
@@ -85,6 +89,18 @@ public class Lootbox : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
+        Destroy(transform.gameObject);
+    }
+
+    /// <summary>
+    /// Fuck you kris
+    /// </summary>
+    void OnDestroy()
+    {
+        Button[] buttons = canvas.GetComponentsInChildren<Button>();
+        foreach (var button in buttons)
+        {
+            button.onClick.RemoveAllListeners();
+        }
     }
 }

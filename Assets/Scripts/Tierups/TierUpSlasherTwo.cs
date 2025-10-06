@@ -1,0 +1,4 @@
+public class TierUpSlashTwo : TierUpBase
+{
+
+}
