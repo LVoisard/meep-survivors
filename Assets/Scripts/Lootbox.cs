@@ -89,7 +89,8 @@ public class Lootbox : MonoBehaviour
         var attks = FindObjectsByType<MeepAttack>(FindObjectsSortMode.None);
         foreach (var att in attks)
         {
-            att.UpdateSkillEffectors();
+            if (att.tag == "Player")
+                att.UpdateSkillEffectors();
         }
 
 

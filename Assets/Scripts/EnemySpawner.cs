@@ -24,8 +24,14 @@ public class EnemySpawner : MonoBehaviour
     {
         Helper.Wait(bossCountdown, () =>
         {
-            Instantiate(bossPrefab);
+            Enemy go = Instantiate(bossPrefab);
+            go.GetComponent<Health>().onDied.AddListener(GetComponent<Level>().Complete);
         });
+    }
+
+    public void Clear()
+    {
+
     }
 
     // Update is called once per frame
@@ -59,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemies()
     {
         spawnCooldownReady = false;
-        Debug.Log(1 + (int)stageDuration / 30);
+        //Debug.Log(1 + (int)stageDuration / 30);
         for (int i = 0; i < 1 + (int)stageDuration / 30; i++)
         {
             SpawnEnemy();

@@ -170,9 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ff86962de5582ba8e55ac2af1430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  LootboxPrefab: {fileID: 2162003279951428263, guid: 7d0627c9879001d499171951f1497c33, type: 3}
-  MeepPickupPrefab: {fileID: 8834936734588603692, guid: 637004735235727448e7fbc1c80a1e01, type: 3}
   speed: 0.1
+  bodydamage: 1
   rooted: 0
 --- !u!114 &8892169557832131268
 MonoBehaviour:
@@ -191,6 +190,9 @@ MonoBehaviour:
   onDied:
     m_PersistentCalls:
       m_Calls: []
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1041440240832663341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,4 +207,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShoot
   shotPrefab: {fileID: -660805927475677602, guid: e798cfd68f01d266c949a78d016604cb, type: 3}
   damage: 2
-  cooldown: 5
+  cooldown: 8
