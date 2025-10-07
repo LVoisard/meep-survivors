@@ -47,7 +47,7 @@ public class Buff : Skill
         return FindObjectsByType<T>(FindObjectsSortMode.None)
             .Select(x => x.transform)
             .Distinct()
-            .Where(x => x.transform != owner.transform && owner.tag == "Player")
+            .Where(x => x.transform != owner.transform && owner.tag != "Enemy")
             .OrderBy(x => Vector3.Distance(pos, x.position))
             .Take(targetCount + effectors.AdditionalTargets)
             .ToArray();
