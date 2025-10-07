@@ -21,6 +21,8 @@ public class DataManager : MonoBehaviour
         FindFirstObjectByType<PlayerManager>().GetComponent<Health>().onDied.AddListener(() =>
         {
             Reset();
+            Enemy.EnemiesDead = 0;
+            Enemy.EnemiesBetweenMeeps = 20;
             SceneManager.LoadScene("MainMenu");
         });
     }
@@ -30,6 +32,8 @@ public class DataManager : MonoBehaviour
         stages[2].levelFinished.AddListener(() =>
         {
             Reset();
+            Enemy.EnemiesDead = 0;
+            Enemy.EnemiesBetweenMeeps = 20;
             SceneManager.LoadScene("WinScene");
         });
     }

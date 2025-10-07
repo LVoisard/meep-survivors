@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
-    static int EnemiesDead = 0;
-    static int EnemiesBetweenMeeps = 20;
+    public static int EnemiesDead = 0;
+    public static int EnemiesBetweenMeeps = 20;
 
     PlayerMovement playerEntity;
     protected Rigidbody2D rigidbody2D;
