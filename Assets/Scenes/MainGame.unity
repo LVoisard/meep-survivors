@@ -164,7 +164,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 79db4a7d2887a6c40b28928b7fcc72a1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -355,7 +355,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 233aa8ee34462704a9c8bab2c7a9c297, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -858,7 +858,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1b88476512b652748ba94c9b97da8157, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1412,7 +1412,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a78355693da558c498713c327a356ff3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1902,7 +1902,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: dbb10baeedce3e048b9740511192b42f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2460,7 +2460,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1acbf51db44b90a4f9213afdacab8d57, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2669,7 +2669,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 436455174725717439, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
+    - {fileID: 6867048275821000433, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3549278074266528996, guid: 8feb0ea98d88291499208050fd63ad45, type: 3}
       insertIndex: -1
