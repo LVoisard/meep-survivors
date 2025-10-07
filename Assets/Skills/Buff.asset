@@ -16,5 +16,5 @@ MonoBehaviour:
   ready: 1
   OnPerform: {fileID: 8300000, guid: dd347ac562f6d6a4aa85713789c69f10, type: 3}
   boostAmount: 1
-  cooldown: 3
-  duration: 1.5
+  cooldown: 5
+  duration: 1
