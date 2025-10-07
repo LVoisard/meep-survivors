@@ -18,7 +18,7 @@ public class Buff : Skill
     private void BuffTargets()
     {
         var targets = FindTargets<MeepAttack>(owner.transform.position);
-        var effect = boostAmount * effectors.Damage;
+        var effect = 15 * (1 + effectors.Damage / 100f);
         foreach (var targ in targets)
         {
             targ.GetComponent<DamageEffector>().AddToVal(effect);
@@ -28,7 +28,8 @@ public class Buff : Skill
             targ.GetComponent<DurationEffector>().AddToVal(effect);
         }
 
-        Helper.Wait(duration / (1f + (effectors.Duration / 100f)), () =>
+        float dur = duration * (1f + (effectors.Duration / 100f));
+        Helper.Wait(dur, () =>
             {
                 foreach (var targ in targets)
                 {
@@ -45,8 +46,8 @@ public class Buff : Skill
     protected override Transform[] FindTargets<T>(Vector3 pos)
     {
         return FindObjectsByType<T>(FindObjectsSortMode.None)
-            .Select(x => x.transform)
             .Distinct()
+            .Select(x => x.transform)
             .Where(x => x.transform != owner.transform && owner.tag != "Enemy")
             .OrderBy(x => Vector3.Distance(pos, x.position))
             .Take(targetCount + effectors.AdditionalTargets)
